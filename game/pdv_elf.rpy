@@ -1,17 +1,27 @@
 label pdv_elf:
     
-    n "Histoire de l'elf"
+    ppElf "Histoire de l'elf"
 
-    h "Bonsoir"
+    menu:
+        ppElf "Tu veux faire des QTE ?"
+        "Oui":
+            jump qte
+        "Non":
+            return
 
-    screen button_hover_example():
-        frame:
-            xalign 0.5 ypos 50
-            button:
-                action Notify(_("You clicked the button."))
-                hovered Notify(_("You hovered the button."))
-                unhovered Notify(_("You unhovered the button."))
-                text _("Click me.") style "button_text"
-    
-    h "BBBBBBB"
+label qte:
+    $ cont = 0
+    $ arr_keys = ["a", "c", "e", "K_UP", "K_SPACE"]
+
+    call qte_setup(0.5, 0.5, 0.01, renpy.random.choice(arr_keys), renpy.random.randint(1, 9) * 0.1, renpy.random.randint(1, 9) * 0.1)
+    # "Function Call" - see label qte_setup for detail on "function"
+    # in the above, I randomly select a key from a previously defined set of keys (arr_keys), and randomise the location
+
+    while cont == 1:
+        call qte_setup(0.5, 0.5, 0.01, renpy.random.choice(arr_keys), renpy.random.randint(1, 9) * 0.1, renpy.random.randint(1, 9) * 0.1)
+        # to repeat the qte events until it is missed
+
+    #play sound "sounds/miss.mp3" <-- joue un son de fail
+    ppElf "Tu as {b}perdu{/b}"
+
     return
