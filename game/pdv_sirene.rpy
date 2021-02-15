@@ -1,6 +1,4 @@
 label pdv_sirene:
 
-    ppElf "Histoire de la sirène"
-
-    ppElf "Bonjour"
+    ppSirene "Histoire de la sirène"
     return

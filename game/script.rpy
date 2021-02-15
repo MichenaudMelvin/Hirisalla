@@ -1,7 +1,8 @@
 ﻿define n = Character("Narrateur")
 
-define ppElf = Character("Hiris") #Femme
+define ppElf = Character("Hiris") #Femme // rajouter une couleur associé au personnage
 define reineElf = Character("Callyon") #Femme
+define princeElf = Character("Keidal") #Homme
 
 define ppSirene = Character("Edalla") #Femme
 define roiSirene = Character("Morgon") #Homme
@@ -14,7 +15,7 @@ label start:
 
     scene bg room
 
-    show eileen happy
+    show Narrateur
 
     menu:
 
