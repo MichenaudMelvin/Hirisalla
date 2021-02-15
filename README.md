@@ -1,1 +1,1 @@
-# workshop_visual_novel
+# Workshop visual novel
