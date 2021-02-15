@@ -5,3 +5,6 @@ traceback.txt
 log.txt
 log.txt
 game/saves/auto-10-LT1.save
+game/qte.rpyc
+game/cache/bytecode.rpyb
+*.rpyb
