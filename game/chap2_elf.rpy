@@ -1,6 +1,3 @@
-#debut chapitre 2
-$ possibiliteFuite = False
-
 label discution_centaure: 
     show Hiris at left
     show centaure at right
@@ -12,6 +9,7 @@ label discution_centaure:
             show centaure:
                 xalign 1.5
             with move
+            hide centaure
             jump info_rdv_reine
         "Non":
             jump info_rdv_centaure
@@ -41,7 +39,7 @@ label info_rdv_reine:
 
 label plage:
     scene bg plage
-    with Dissolve(.5)
+    with fade
     show Hiris at left
     ppElf "c la plage"
     ppElf "elle est la la ville"
