@@ -1,4 +1,3 @@
-#debut chapitre 2
 $ possibiliteFuite = False
 
 label discution_centaure: 
@@ -12,6 +11,7 @@ label discution_centaure:
             show centaure:
                 xalign 1.5
             with move
+            hide centaure
             jump info_rdv_reine
         "Non":
             jump info_rdv_centaure
@@ -41,7 +41,7 @@ label info_rdv_reine:
 
 label plage:
     scene bg plage
-    with Dissolve(.5)
+    with fade
     show Hiris at left
     ppElf "c la plage"
     ppElf "elle est la la ville"
@@ -81,6 +81,7 @@ label presentationFamilleSirene:
         "Le prince est aussi beau que sur la peinture":
             jump ecouteConversation
         "Le prince n'est pas aussi beau que ce que j'imaginais":
+            #not working // possibiliteFuite not definded
             if (possibiliteFuite == True):
                 menu:
                     "Vous décidez de fuir":
