@@ -1,10 +1,15 @@
 label choix_elf:
     scene bg elf    
-    n "Vous allez être téléporter dans l'univers des elfs"
-    ppelf "Où suis-je ?"
+    play sound "audio/galop.ogg"
+    pause 3
+    stop sound
+    play music "audio/test_music.mp3"
+    centaure "Salut Hiris ! J'ai une convocation de la Reine pour toi !"
+    ppElf "Je t'écoute Garkiel"
+    centaure "Tu as rendez-vous avec la Reine dans une heure, elle semble avoir quelque chose d'important à te dire."
 
     menu:
-        "J'ai l'impression que tu me caches un truc.":
+        "Vu ton visage, tu ne me cacherais pas quelque chose ?":
             jump interrogatif
         "D'accord, pas de soucis, je te fais confiance.":
             jump confiance
@@ -22,34 +27,41 @@ label interrogatif:
 
 label confiance:
     centaure "Super, bon courage, à demain !"
+    play sound "audio/galop.ogg"
+    pause 3
+    stop sound
+    n "Vous vous dirigez vers votre maison à l'heure demandée."
     jump rencontre_famille_prevu
 
 label colere:
     centaure "Je ne devais rien te dire, tu es toujours aussi têtue..."
-    centaure "Un mariage arrangé a été organisé entre toi et le Prince des Sirènes."
-    ppelf "Tu te fous de moi j'espère."
+    centaure "La reine a décidé de te marier avec le prince d'Océanos."
+    ppElf "Tu te fous de moi j'espère."
     centaure "Il faut que j'y aille, désolé !"
 
-    n "Garkiel s'en va au galop."
-    n "Ellipse narrative."
+    play sound "audio/galop.ogg"
+    pause 3
+    n "Garkiel s'en va au galop."  
+    stop sound
+    n "Vous vous dirigez vers votre maison en furie."
 
     jump rencontre_famille_avance
     
 label suspicion:
     centaure "Oui, c'est vrai, ne t'inquiète pas."
-    ppelf "Gare à toi si tu m'as menti, tu vas le regretter."
+    ppElf "Gare à toi si tu m'as menti, tu vas le regretter."
     jump rencontre_famille_prevu
 
 label rencontre_famille_prevu:
-    reineelf "Tu es pile à l'heure ma fille !"
-    reineelf "Il faut que je t'explique ce qu'il va se passer."
-    reineelf "Nous avons besoin de toi pour faire un mariage arrangé."
-    reineelf "Nous devons avoir la paix entre les deux royaumes, tu seras la future femme du Prince des Sirènes."
+    reineElf "Tu es pile à l'heure ma fille !"
+    reineElf "Il faut que je t'explique ce qu'il va se passer."
+    reineElf "Nous avons besoin de toi pour faire un mariage arrangé."
+    reineElf "Nous devons avoir la paix entre les deux royaumes, tu seras la future femme du Prince des Sirènes."
     return
 
 label rencontre_famille_avance:
-    reineelf "Tu es déjà là ma fille ?"
-    reineelf "Que me vaut ta visite si précipitée ?"
+    reineElf "Tu es déjà là ma fille ?"
+    reineElf "Que me vaut ta visite si précipitée ?"
 
     menu : 
         "Je sais que vous voulez me marier avec le Prince des Sirènes":
@@ -58,10 +70,10 @@ label rencontre_famille_avance:
             jump description_mariage
 
 label description_mariage:           
-    ppelf "Je sais ce que vous avez prévu de faire de moi avec le Prince des Sirènes !"
-    reineelf "On a pas le choix ma chérie, c'est pour sauver notre royaume."
-    reineelf "Tu dois te sacrifier pour tous nous sauver !"
-    reineelf "Et puis le prince est magnifique ! *Description du Prince*"
+    ppElf "Je sais ce que vous avez prévu de faire de moi avec le Prince des Sirènes !"
+    reineElf "On a pas le choix ma chérie, c'est pour sauver notre royaume."
+    reineElf "Tu dois te sacrifier pour tous nous sauver !"
+    reineElf "Et puis le prince est magnifique ! *Description du Prince*"
 
     menu : 
         "Mais je m'en fiche":
@@ -70,12 +82,9 @@ label description_mariage:
             jump accord
 
 label contradiction:           
-    ppelf "Mais je m'en fiche, il a des écailles, des oreilles en forme de nageoire, c'est affreux !"
-    ppelf "Je ne pourrais jamais accepter cela."
+    ppElf "Mais je m'en fiche, il a des écailles, des oreilles en forme de nageoire, c'est affreux !"
+    ppElf "Je ne pourrais jamais accepter cela."
     return
 label accord:
-    ppelf "J'espère que la description est vraie Mère."
+    ppElf "J'espère que la description est vraie Mère."
     return
-
-
-
