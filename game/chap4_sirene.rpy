@@ -1,42 +1,42 @@
-label ambassadeExcuses_elf:
+label ambassadeExcuses_sirene:
     ppSirene "ouais lourd on est a l'ambassade"
     ppElf "ouais lourd on fait un accord de paix ouais"
-    jump discution_elf
+    jump discution_sirene
 
-label ambassadeNonExcuses_elf:
+label ambassadeNonExcuses_sirene:
     ppSirene "blabla c pa coul de pas s'excuzer"
     ppElf "ouais mais c'est pas toi qui décide"
     menu:
         ppSirene "Tu t'excuse ou pas ?"
         "Oui":
-            jump discution_elf 
+            jump discution_sirene 
         "Non":
-            jump finGuerre_elf
+            jump finGuerre_sirene
 
-label finGuerre_elf:
+label finGuerre_sirene:
     #transition et mise en scène
     ppElf "wesh c pa cool on est mort"
     return
 
-label discution_elf:
+label discution_sirene:
     princeElf "Wesh on fait koi ????????"
     if (qteObservationReussi == True):
-        jump discutionEntrePrinces_elf
+        jump discutionEntrePrinces_sirene
     else:
         menu:
             "declaration":
-                jump declaration_elf
+                jump declaration_sirene
             "mariage arrangé":
-                jump finMariageArrange_elf
+                jump finMariageArrange_sirene
             "romance entre princes":
-                jump discutionEntrePrinces_elf
+                jump discutionEntrePrinces_sirene
 
-label finMariageArrange_elf:
+label finMariageArrange_sirene:
     #transition et mise en scène
     ppElf "trop relou jvoulais pas etre avec ce fdp"
     return
 
-label discutionEntrePrinces_elf:
+label discutionEntrePrinces_sirene:
     show princeSirene:
         xalign 1.5
     with move
@@ -51,7 +51,7 @@ label discutionEntrePrinces_elf:
     menu:
         princeSirene "on baise ?"
         "Oui":
-            jump finPrinceLove_elf
+            jump finPrinceLove_sirene
         "Non":
             show princeSirene:
                 xalign 1.5
@@ -61,23 +61,23 @@ label discutionEntrePrinces_elf:
             with move
             hide princeElf
             hide princeSirene
-            jump finMariageArrange_elf
+            jump finMariageArrange_sirene
 
-label finPrinceLove_elf:
+label finPrinceLove_sirene:
     princeSirene "trop bien"
     princeElf "oui"
     #fin et mise en scène
     return
 
-label declaration_elf:
+label declaration_sirene:
     menu:
         ppElf "blabla"
         "Je t'aime":
-            jump discutionEntrePrincesses_elf
+            jump discutionEntrePrincesses_sirene
         "nik":
-            jump finMariageArrange_elf
+            jump finMariageArrange_sirene
 
-label discutionEntrePrincesses_elf:
+label discutionEntrePrincesses_sirene:
     show Hiris:
         xalign 1.5
     with move
@@ -93,16 +93,16 @@ label discutionEntrePrincesses_elf:
     ppElf "on fait koi"
     ppSirene "jsp"
     if (qteDragueReussi == True):
-        jump finHeureuse_elf   
+        jump finHeureuse_sirene   
     else:
-        jump finTrise_elf
+        jump finTrise_sirene
 
-label finHeureuse_elf:
+label finHeureuse_sirene:
     ppElf "<3"
     #mise en scène et fin
     return
 
-label finTrise_elf:
+label finTrise_sirene:
     ppElf ":'("
     ppSirene ":'("
     #mise en scène et fin

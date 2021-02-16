@@ -1,4 +1,4 @@
-label discution_centaure: 
+label discution_centaure_sirene: 
     show Hiris at left
     show centaure at right
     menu:
@@ -10,22 +10,22 @@ label discution_centaure:
                 xalign 1.5
             with move
             hide centaure
-            jump info_rdv_reine
+            jump info_rdv_reine_sirene
         "Non":
-            jump info_rdv_centaure
+            jump info_rdv_centaure_sirene
 
-label discution_reine:
+label discution_reine_sirene:
     reineElf "Wesh"
     reineElf "cest un dialogue"
-    jump info_rdv_reine
+    jump info_rdv_reine_sirene
 
-label info_rdv_centaure:
+label info_rdv_centaure_sirene:
     centaure "OK"
     ppElf "c rigolo"
     $ possibiliteFuite = True
-    jump plage
+    jump plage_sirene
 
-label info_rdv_reine:
+label info_rdv_reine_sirene:
     stop sound
     show callyon:
         xalign 1.5
@@ -35,9 +35,9 @@ label info_rdv_reine:
     reineElf "VOila ce qui va ce passer"
     ppElf "OK lourd"
     ppElf "j'ai pas envie"
-    jump plage
+    jump plage_sirene
 
-label plage:
+label plage_sirene:
     scene bg plage
     with fade
     show Hiris at left
@@ -59,43 +59,43 @@ label plage:
     roiSirene "Bonsoir"
 
     menu:
-        "Bonjour je me présente, Hiris":
-            jump bonjour_hiris
+        "Bonjour je me présente, edalla":
+            jump bonjour_edalla_sirene
         "Bonjour enchanté de faire votre connaissance":
-            jump bonjour_enchante
+            jump bonjour_enchante_sirene
 
-label bonjour_hiris:
-    ppElf "Bonjour je me présente, Hiris"
-    jump presentationFamilleSirene
+label bonjour_edalla_sirene:
+    ppElf "Bonjour je me présente, edalla"
+    jump presentationFamilleSirene_sirene
 
-label bonjour_enchante:
+label bonjour_enchante_sirene:
     ppElf "Bonjour enchanté de faire votre connaissance"
-    jump presentationFamilleSirene
+    jump presentationFamilleSirene_sirene
 
-label presentationFamilleSirene:
+label presentationFamilleSirene_sirene:
     roiSirene "Bonjour je suis Morgon, la roi"
     princeSirene "Bonjour je suis Metilay, le prince"
     menu:
         "Le prince est aussi beau que sur la peinture":
-            jump ecouteConversation
+            jump ecouteConversation_sirene
         "Le prince n'est pas aussi beau que ce que j'imaginais":
             if (possibiliteFuite == True):
                 menu:
                     "Vous décidez de fuir":
                         jump fuite
                     "Vous décidez de rester":
-                        jump ecouteConversation
+                        jump ecouteConversation_sirene
             else:
-                jump ecouteConversation
+                jump ecouteConversation_sirene
 
-label ecouteConversation:
+label ecouteConversation_sirene:
     roiSirene "blabla"
     princeSirene "blabla"
     roiSirene "Pour que la paix soit durable il nous faut un mariage"
     roiSirene "Notre fille est absente." 
     roiSirene "Elle a demandé a vous voir en privé"
-    jump rencontrePrincesse
+    jump rencontrePrincesse_sirene
 
 label fuite:
     ppElf "Je vais aux toilettes"
-    jump rencontrePrincesse
+    jump rencontrePrincesse_sirene

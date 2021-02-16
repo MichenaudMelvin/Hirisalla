@@ -1,4 +1,4 @@
-label rencontrePrincesse:
+label rencontrePrincesse_sirene:
     #Notify("Chapitre 3")
     scene bg ambassadeSirene
     with fade
@@ -21,55 +21,55 @@ label rencontrePrincesse:
     ppSirene "c quoi ton avis sur ce mariage"
     menu:
         "aller en ville":
-            jump discutionVille_elf
+            jump discutionVille_sirene
         "Rester dans la chambre":
-            jump discutionChambre_elf
+            jump discutionChambre_sirene
 
-label discutionVille_elf:
+label discutionVille_sirene:
     scene bg villeSirene
     with fade
     ppSirene "ah oausi nik les vilageois"
     ppElf "ouais carrement"
     menu:
         "Ah ouais trop stylé votre ville de poisson":
-            jump vieDePrincesse_elf
+            jump vieDePrincesse_sirene
         "On va voir le prince ?":
-            jump dialogueSurPrinces_elf
+            jump dialogueSurPrinces_sirene
 
-label discutionChambre_elf:
+label discutionChambre_sirene:
     ppSirene "on parle de truc politiques"
     ppElf "ah ouais trop relou l'armé"
     menu:
         "On continue à parler en ville ?":
             ppElf "On continue à parler en ville ?"
-            jump discutionVille_elf
+            jump discutionVille_sirene
         "Continuer la discution":
             ppElf "ok je sui pas d'accord avec toa"
             ppSirene "ah bah si c'est comme ça"
             ppSirene "tu hors de ma vue"
             #faire une transition
-            jump excusesPrincesse_elf
+            jump excusesPrincesse_sirene
     
-label vieDePrincesse_elf:
+label vieDePrincesse_sirene:
     $ qteDragueReussi = True
     ppSirene "ouais je sais pas de quoi on peut parler"
     ppElf "bah ferme ta gueule"
     scene bg ambassadeSirene
     with fade
-    jump ambassadeExcuses_elf
+    jump ambassadeExcuses_sirene
 
-label dialogueSurPrinces_elf:
+label dialogueSurPrinces_sirene:
     $ qteObservationReussi = True
     ppElf "ouais nik les princes"
     ppSirene "ouais carrement"
     scene bg ambassadeSirene
     with fade
-    jump ambassadeExcuses_elf
+    jump ambassadeExcuses_sirene
 
-label excusesPrincesse_elf:
+label excusesPrincesse_sirene:
     menu:
         reineElf "Tu t'excuse ?"
         "Oui":
-            jump ambassadeExcuses_elf
+            jump ambassadeExcuses_sirene
         "Non":
-            jump ambassadeNonExcuses_elf
+            jump ambassadeNonExcuses_sirene
