@@ -1,6 +1,19 @@
 label rencontrePrincesse:
     #Notify("Chapitre 3")
-    scene bg locauxSirene
+    scene bg ambassadeSirene
+    with fade
+
+    show Hiris:
+        xalign 1.5
+    with move
+    show Edalla:
+        xalign -0.5
+    with move
+    show Hiris at right
+    with move
+    show Edalla at left
+    with move
+
     ppSirene "Saluuut"
     ppSirene "jme présente je suis une sirene"
     ppSirene "blabla"
@@ -13,6 +26,8 @@ label rencontrePrincesse:
             jump discutionChambre_elf
 
 label discutionVille_elf:
+    scene bg villeSirene
+    with fade
     ppSirene "ah oausi nik les vilageois"
     ppElf "ouais carrement"
     menu:
@@ -39,12 +54,16 @@ label vieDePrincesse_elf:
     $ qteDragueReussi = True
     ppSirene "ouais je sais pas de quoi on peut parler"
     ppElf "bah ferme ta gueule"
+    scene bg ambassadeSirene
+    with fade
     jump ambassade_elf
 
 label dialogueSurPrinces_elf:
     $ qteObservationReussi = True
     ppElf "ouais nik les princes"
     ppSirene "ouais carrement"
+    scene bg ambassadeSirene
+    with fade
     jump ambassade_elf
 
 label excusesPrincesse_elf:

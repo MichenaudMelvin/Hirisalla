@@ -1,6 +1,6 @@
 label ambassadeExcuses_elf:
     ppSirene "ouais lourd on est a l'ambassade"
-    ppElf "ouais lourd on fait un accord de paix"
+    ppElf "ouais lourd on fait un accord de paix ouais"
     jump discution_elf
 
 label ambassadeNonExcuses_elf:
@@ -77,6 +77,17 @@ label declaration_elf:
             jump finMariageArrange_elf
 
 label discutionEntrePrincesses_elf:
+    show Hiris:
+        xalign 1.5
+    with move
+    show Edalla:
+        xalign -0.5
+    with move
+    show Hiris at right
+    with move
+    show Edalla at left
+    with move
+
     ppElf "ok"
     ppElf "on fait koi"
     ppSirene "jsp"
@@ -89,6 +100,7 @@ label finHeureuse_elf:
     ppElf "<3"
     #mise en scène et fin
     return
+
 label finTrise_elf:
     ppElf ":'("
     ppSirene ":'("
