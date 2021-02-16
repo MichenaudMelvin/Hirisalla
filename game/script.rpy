@@ -16,17 +16,12 @@ label start:
     $ qteDragueReussi = False
     $ qteObservationReussi = False
     scene bg room
-
     show Narrateur
 
     menu:
-
         n "Chosisez un point de vue"
-        
         "Point de vue de la sirène":
             jump choix_sirene
-
         "Point de vue de l'elf":
             jump choix_elf
-
     return
