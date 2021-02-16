@@ -22,9 +22,9 @@ label start:
         n "Chosisez un point de vue"
         
         "Point de vue de la sirène":
-            jump pdv_sirene
+            jump choix_sirene
 
         "Point de vue de l'elf":
-            jump pdv_elf
+            jump choix_elf
 
     return

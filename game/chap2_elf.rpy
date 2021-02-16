@@ -1,16 +1,3 @@
-label pdv_elf:
-    scene bg foret
-    hide Narrateur
-    ppElf "Histoire de l'elf"
-    menu:
-        ppElf "chapitre deux quelle discution : "
-        "avec l'ami":
-            jump discution_centaure
-        "avec la reine":
-            jump discution_reine
-    
-    return
-
 #debut chapitre 2
 $ possibiliteFuite = False
 
@@ -114,14 +101,3 @@ label ecouteConversation:
 label fuite:
     ppElf "Je vais aux toilettes"
     jump rencontrePrincesse
-
-label rencontrePrincesse:
-    #Notify("Chapitre 3")
-    scene bg locauxSirene
-    ppSirene "Saluuut"
-    ppSirene "jme présente je suis une sirene"
-    ppSirene "blabla"
-    ppElf "ok"
-    ppSirene "c quoi ton avis sur ce mariage"
-    
-

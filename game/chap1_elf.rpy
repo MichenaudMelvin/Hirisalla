@@ -3,7 +3,7 @@ label choix_elf:
     play sound "audio/galop.ogg"
     pause 3
     stop sound
-    play music "audio/test_music.mp3"
+    #play music "audio/test_music.mp3"
     centaure "Salut Hiris ! J'ai une convocation de la Reine pour toi !"
     ppElf "Je t'écoute Garkiel"
     centaure "Tu as rendez-vous avec la Reine dans une heure, elle semble avoir quelque chose d'important à te dire."
@@ -27,9 +27,9 @@ label interrogatif:
 
 label confiance:
     centaure "Super, bon courage, à demain !"
-    play sound "audio/galop.ogg"
+    #play sound "audio/galop.ogg"
     pause 3
-    stop sound
+    #stop sound
     n "Vous vous dirigez vers votre maison à l'heure demandée."
     jump rencontre_famille_prevu
 
@@ -39,10 +39,10 @@ label colere:
     ppElf "Tu te fous de moi j'espère."
     centaure "Il faut que j'y aille, désolé !"
 
-    play sound "audio/galop.ogg"
+    #play sound "audio/galop.ogg"
     pause 3
     n "Garkiel s'en va au galop."  
-    stop sound
+    #stop sound
     n "Vous vous dirigez vers votre maison en furie."
 
     jump rencontre_famille_avance
@@ -62,7 +62,6 @@ label rencontre_famille_prevu:
 label rencontre_famille_avance:
     reineElf "Tu es déjà là ma fille ?"
     reineElf "Que me vaut ta visite si précipitée ?"
-
     menu : 
         "Je sais que vous voulez me marier avec le Prince des Sirènes":
             jump description_mariage
@@ -74,9 +73,8 @@ label description_mariage:
     reineElf "On a pas le choix ma chérie, c'est pour sauver notre royaume."
     reineElf "Tu dois te sacrifier pour tous nous sauver !"
     reineElf "Et puis le prince est magnifique ! *Description du Prince*"
-
     menu : 
-        "Mais je m'en fiche":
+        "Mais je m'en fiche !":
             jump contradiction
         "Il n'a pas l'air si mal...":
             jump accord
@@ -84,7 +82,8 @@ label description_mariage:
 label contradiction:           
     ppElf "Mais je m'en fiche, il a des écailles, des oreilles en forme de nageoire, c'est affreux !"
     ppElf "Je ne pourrais jamais accepter cela."
-    return
+    jump discution_centaure
+
 label accord:
     ppElf "J'espère que la description est vraie Mère."
-    return
+    jump discution_reine
