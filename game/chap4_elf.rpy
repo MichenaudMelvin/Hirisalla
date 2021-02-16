@@ -20,7 +20,6 @@ label finGuerre_elf:
 
 label discution_elf:
     princeElf "Wesh on fait koi ????????"
-    $ qteObservationReussi = True
     if (qteObservationReussi == True):
         jump discutionEntrePrinces_elf
     else:
@@ -60,6 +59,8 @@ label discutionEntrePrinces_elf:
             show princeElf:
                 xalign -0.5
             with move
+            hide princeElf
+            hide princeSirene
             jump finMariageArrange_elf
 
 label finPrinceLove_elf:

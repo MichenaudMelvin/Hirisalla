@@ -56,7 +56,7 @@ label vieDePrincesse_elf:
     ppElf "bah ferme ta gueule"
     scene bg ambassadeSirene
     with fade
-    jump ambassade_elf
+    jump ambassadeExcuses_elf
 
 label dialogueSurPrinces_elf:
     $ qteObservationReussi = True
@@ -64,7 +64,7 @@ label dialogueSurPrinces_elf:
     ppSirene "ouais carrement"
     scene bg ambassadeSirene
     with fade
-    jump ambassade_elf
+    jump ambassadeExcuses_elf
 
 label excusesPrincesse_elf:
     menu:

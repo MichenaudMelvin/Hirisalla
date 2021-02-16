@@ -1,5 +1,3 @@
-$ possibiliteFuite = False
-
 label discution_centaure: 
     show Hiris at left
     show centaure at right
@@ -81,7 +79,6 @@ label presentationFamilleSirene:
         "Le prince est aussi beau que sur la peinture":
             jump ecouteConversation
         "Le prince n'est pas aussi beau que ce que j'imaginais":
-            #not working // possibiliteFuite not definded
             if (possibiliteFuite == True):
                 menu:
                     "Vous décidez de fuir":
