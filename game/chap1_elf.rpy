@@ -2,10 +2,10 @@ label choix_elf:
     scene bg elf    
     show Hiris at left
     show centaure at right
-    play sound "audio/galop.ogg"
+    play music "audio/theme_elfe.mp3"
+    play sound "audio/arrive_centaure.mp3"
     pause 3
     stop sound
-    play music "audio/test_music.mp3"
     centaure "Salut Hiris ! J'ai une convocation de la Reine pour toi !"
     ppElf "Je t'écoute Garkiel"
     centaure "Tu as rendez-vous avec la Reine dans une heure, elle semble avoir quelque chose d'important à te dire."
@@ -29,7 +29,7 @@ label interrogatif_elf:
 
 label confiance_elf:
     centaure "Super, bon courage, à demain !"
-    play sound "audio/galop.ogg"
+    play sound "audio/depart_centaure.mp3"
     pause 3
     stop sound
     n "Vous vous dirigez vers votre maison à l'heure demandée."
@@ -41,7 +41,7 @@ label colere_elf:
     ppElf "Tu te fous de moi j'espère."
     centaure "Il faut que j'y aille, désolé !"
 
-    play sound "audio/galop.ogg"
+    play sound "audio/depart_centaure.mp3"
     pause 3
     n "Garkiel s'en va au galop."  
     show centaure:
@@ -60,6 +60,8 @@ label suspicion_elf:
     centaure "Oui, c'est vrai, ne t'inquiète pas."
     ppElf "Gare à toi si tu m'as menti, tu vas le regretter."
     jump rencontre_famille_prevu_elf
+
+
 
 label rencontre_famille_prevu_elf:
     scene ambassade
@@ -91,6 +93,7 @@ label resignation:
     reineElf "Non aucun, je suis désolée de devoir te forcer."
     jump tableau_prince
 
+
 label rencontre_famille_avance_elf:
     scene ambassade 
     with fade
@@ -105,14 +108,13 @@ label rencontre_famille_avance_elf:
     reineElf "Tu es déjà là ma fille ?"
     reineElf "Que me vaut ta visite si précipitée ?"
     menu : 
-        "Je sais que vous voulez me marier avec le Prince des Sirènes":
+        "Je sais que vous voulez me marier avec le Prince d'Océanos":
+            ppElf "Je sais ce que vous avez prévu de faire de moi avec le Prince d'Océanos !"
             jump description_mariage_elf
-
         "On m'a expliqué ce que vous voulez faire de moi !":
             jump description_mariage_elf
 
-label description_mariage_elf:           
-    ppElf "Je sais ce que vous avez prévu de faire de moi avec le Prince des Sirènes !"
+label description_mariage_elf:
     reineElf "On a pas le choix ma chérie, c'est pour sauver notre royaume."
     reineElf "Tu dois te marier pour tous nous sauver !"
     reineElf "Et puis le prince est magnifique !"
