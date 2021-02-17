@@ -43,17 +43,7 @@ label info_rdv_roi_sirene:
     show Edalla:
         xalign -0.5
     with move
-    scene bg plage
-    with fade
-    #elipse en gros
-    pause 3
-    show Edalla:
-        xalign -0.5
-    with move
-    show Edalla at left
-    with move
-    roiSirene "Reine Callyon, c’est un honneur pour nous de pouvoir entrer dans ce lieux aussi chaleureux."
-    reineElf "Je suis heureuse de voir que nos décisions sont pour un futur meilleur."
+    
 
     ppSirene "ouais c relou"
     tortue "ouais tu doit faire qoi ?"
@@ -87,47 +77,57 @@ label plage_sirene:
 
 label decouverteFamilleRoyale_sirene:
     #elipse de 1h
-    show princeElf:
+    scene bg ambassadeElf
+    with fade
+    pause 3
+    show Edalla:
+        xalign -0.5
+    with move
+    show Morgon:
+        xalign -0.5
+    with move
+    show Edalla at left
+    with move
+    show Morgon:
+        xalign 0.15
+    with move
+    show Keidal:
         xalign 1.5
     with move
-    show reineElf:
+    show Callyon:
         xalign 1.5
     with move
-    show princeElf at right
+    show Keidal at right
     with move
-    show reineElf:
+    show Callyon:
         xalign 0.85
     with move
-    princeElf "Bonjour"
-    reineElf "Bonsoir"
-
+    roiSirene "Reine Callyon, c’est un honneur pour nous de pouvoir entrer dans ce lieux aussi chaleureux."
+    reineElf "Je suis heureuse de voir que nos décisions sont pour un futur meilleur."
+    princeElf "Dans ce cas commençons les présentations."
     menu:
-        "Bonjour je me présente, Edalla":
-            jump bonjour_edalla_sirene
-        "Bonjour enchanté de faire votre connaissance":
-            jump bonjour_enchante_sirene
-
-label bonjour_edalla_sirene:
-    ppSirene "Bonjour je me présente, Edalla"
-    jump presentationFamilleSirene_sirene
-
-label bonjour_enchante_sirene:
-    ppSirene "Bonjour enchanté de faire votre connaissance"
-    jump presentationFamilleSirene_sirene
+        "Je me présente, Edalla":
+            ppSirene "Bonjour, je me présente, Edalla fille du roi"
+            jump presentationFamilleSirene_sirene
+        "Enchanté de faire votre connaissance":
+            ppSirene "Bonjour, je suis la princesse, enchanté de faire votre connaissance"
+            jump presentationFamilleSirene_sirene
 
 label presentationFamilleSirene_sirene:
-    reineElf "Bonjour je suis Morgon, la reine"
-    princeElf "Bonjour je suis Keidal, le prince"
+    princeSirene "Je suis Metilay, fils du roi Morgon, enchanté également."
+    princeElf "Je suis Keidal, fils aîné de la Reine Callyon, c’est un plaisir de faire votre connaissance."
     menu:
         "Le prince est aussi beau que sur la peinture":
+            ppSirene "{i}Il est aussi beau que ce sur le tableau.{/i}"
             jump ecouteConversation_sirene
         "Le prince n'est pas aussi beau que ce que j'imaginais":
+            ppSirene "{i}Il ne ressemble pas tout à fait à ce que j’ai vu sur le tableau hier.{/i}"
             jump ecouteConversation_sirene
 
 label ecouteConversation_sirene:
-    reineElf "blabla"
-    princeElf "blabla"
-    reineElf "Pour que la paix soit durable il nous faut un mariage"
-    reineElf "Notre fille est absente." 
-    reineElf "Elle a demandé a vous voir en privé"
+    reineElf "Hiris est actuellement dans ces appartements. J’ai jugé qu’il était plus utile de présenter nos fiancés en premiers"
+    roiSirene "Bien, pour que la paix soit durable il nous faut un mariage."
+    reineElf "Mademoiselle Edalla, je vous prie de rejoindre ma fille, Hiris, pour parler de vôtre marriage à toutes les deux."
+    reineElf "Elle doit être dans sa chambre."
+    ppSirene "Bien… j'y vais de ce pas."
     jump rencontrePrincesse_sirene
