@@ -12,7 +12,9 @@ define centaure = Character("Garkiel") #Centaure
 define tortue = Character ("Amma") #Tortue
 
 label start:
-
+    $ possibiliteFuite = False
+    $ qteDragueReussi = False
+    $ qteObservationReussi = False
     scene bg room
 
     show Narrateur

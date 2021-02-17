@@ -1,4 +1,3 @@
-#debut chapitre 2
 label discution_centaure: 
     scene bg elf
     with fade
@@ -53,6 +52,7 @@ label info_rdv_centaure:
 
 label plage:
     scene bg plage
+    with fade
     show Hiris at left
     with fade
     show Hiris at left
