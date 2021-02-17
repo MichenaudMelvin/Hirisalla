@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Test")
+define config.name = _("Hirisalla")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "Test"
+define build.name = "Hirisalla"
 
 
 ## Sounds and music ############################################################
@@ -142,7 +142,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "Test-1613384078"
+define config.save_directory = "Hirisalla-1613384078"
 
 
 ## Icon ########################################################################
@@ -205,4 +205,4 @@ init python:
 ## The username and project name associated with an itch.io project, separated
 ## by a slash.
 
-# define build.itch_project = "renpytom/test-project"
+# define build.itch_project = "renpytom/Hirisalla-project"

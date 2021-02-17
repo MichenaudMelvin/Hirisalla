@@ -1,4 +1,4 @@
-label rencontrePrincesse:
+label rencontrePrincesse_elf:
     #Notify("Chapitre 3")
     scene bg ambassadeSirene
     with fade

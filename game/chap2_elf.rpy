@@ -1,4 +1,4 @@
-label discution_centaure: 
+label discution_centaure_elf: 
     scene bg elf
     with fade
     show Hiris at left
@@ -14,23 +14,33 @@ label discution_centaure:
                 xalign 1.5
             with move
             hide centaure
-            jump discution_reine
-        "Je ne peux pas accepter...":
-            jump info_rdv_centaure
+            jump info_rdv_reine_elf
+        "Non":
+            jump info_rdv_centaure_elf
 
-label discution_reine:
-    #stop sound
-    scene ambassade
-    with fade
-    show Hiris:
-        xalign -0.5
-    with move
-    show Hiris at left
+label discution_reine_elf:
+    reineElf "Wesh"
+    reineElf "cest un dialogue"
+    jump info_rdv_reine_elf
+
+label info_rdv_centaure_elf:
+    centaure "OK"
+    ppElf "c rigolo"
+    jump plage_elf
+
+label info_rdv_reine_elf:
+    stop sound
     show callyon:
         xalign 1.5
     with move
     show callyon at right
     with move
+
+    reineElf "VOila ce qui va ce passer"
+    ppElf "OK lourd"
+    ppElf "j'ai pas envie"
+    jump plage_elf
+
     ppElf "J'y ai réfléchis ma Reine."
     reineElf "Je vous écoute."
     ppElf "J'accomplirai mon devoir afin d’apporter la paix, la sécurité et la prospérité à notre peuple."
@@ -38,7 +48,7 @@ label discution_reine:
     ppElf "Leur village se situe sous l’eau, comment sommes-nous censés respirer ?"
     reineElf "De ce que j’ai appris, nous n’aurons pas à aller sous l’eau, le village est protégé par une bulle d’air"
     ppElf "Je vois, je vous retrouve demain sur la plage pour le départ."
-    jump plage
+    jump plage_elf
 
 label info_rdv_centaure:
     ppElf "Je ne peux pas accepter un tel destin, je refuse de me marier avec lui."
@@ -48,9 +58,10 @@ label info_rdv_centaure:
     centaure "Nous pourrons ensuite accéder à leur cité sous-marine."
     ppElf "Et comment sommes-nous supposé respirer sous l'eau ?"
     centaure "Ne t'en fais pas, d'après les dires, nous n'aurons pas besoin d'aller sous l'eau."
-    jump plage
+    jump plage_elf
 
-label plage:
+
+label plage_elf:
     scene bg plage
     with fade
     show Hiris at left
@@ -75,30 +86,32 @@ label plage:
     with move
 
     menu:
-        "Bonjour, je me présente, Hiris.":
-            jump bonjour_hiris
-        "Bonjour messieurs, ravi de faire votre connaissance.":
-            jump bonjour_enchante
+        "Bonjour je me présente, Hiris":
+            jump bonjour_hiris_elf
+        "Bonjour enchanté de faire votre connaissance":
+            jump bonjour_enchante_elf
 
-label bonjour_hiris:
-    ppElf "Bonjour je me présente, Hiris, la princesse des Elfes en personne."
-    jump presentationFamilleSirene
+label bonjour_hiris_elf:
+    ppElf "Bonjour je me présente, Hiris"
+    jump presentationFamilleSirene_elf
 
-label bonjour_enchante:
-    ppElf "Bonjour messieurs, ravi de faire votre connaissance."
-    jump presentationFamilleSirene
+label bonjour_enchante_elf:
+    ppElf "Bonjour enchanté de faire votre connaissance"
+    jump presentationFamilleSirene_elf
 
-label presentationFamilleSirene:
-    roiSirene "Bonjour, enchanté mademoiselle, je suis Morgon, le roi d'Océanos."
-    princeSirene "Echanté de faire votre connaissance, ma gente demoiselle, je suis Metilay, le prince de la même cité."
+label presentationFamilleSirene_elf:
+    roiSirene "Bonjour je suis Morgon, la roi"
+    princeSirene "Bonjour je suis Metilay, le prince"
     menu:
-        "Le prince est aussi ravissant que sur le tableau.":
-            jump ecouteConversation
-        "Le prince n'est pas aussi attrayant que ce que j'imaginais.":
-            jump ecouteConversation
+        "Le prince est aussi beau que sur la peinture":
+            jump ecouteConversation_elf
+        "Le prince n'est pas aussi beau que ce que j'imaginais":
+            jump ecouteConversation_elf
 
-label ecouteConversation:
-    roiSirene "Comme mon messager vous l’a transmis, je suis d’avis que cette guerre a déjà bien assez durée."
-    roiSirene "C’est alors que j’ai pensé que le moyen d’y mettre un terme définitivement était un mariage arrangé qui unirait nos clans pour l’éternité."
-    princeSirene "Par ailleurs, la princesse de cette Cité aurait aimé vous rencontrer en privé." 
-    jump rencontrePrincesse
+label ecouteConversation_elf:
+    roiSirene "blabla"
+    princeSirene "blabla"
+    roiSirene "Pour que la paix soit durable il nous faut un mariage"
+    roiSirene "Notre fille est absente." 
+    roiSirene "Elle a demandé a vous voir en privé"
+    jump rencontrePrincesse_elf
