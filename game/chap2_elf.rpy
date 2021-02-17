@@ -1,4 +1,4 @@
-label discution_centaure: 
+label discution_centaure_elf:
     scene bg elf
     with fade
     show Hiris at left
@@ -14,11 +14,11 @@ label discution_centaure:
                 xalign 1.5
             with move
             hide centaure
-            jump discution_reine
+            jump discution_reine_elf
         "Je ne peux pas accepter...":
-            jump info_rdv_centaure
+            jump info_rdv_centaure_elf
 
-label discution_reine:
+label discution_reine_elf:
     stop sound
     scene ambassade
     with fade
@@ -38,7 +38,7 @@ label discution_reine:
     ppElf "Leur village se situe sous l’eau, comment sommes-nous censés respirer ?"
     reineElf "De ce que j’ai appris, nous n’aurons pas à aller sous l’eau, le village est protégé par une bulle d’air"
     ppElf "Je vois, je vous retrouve demain sur la plage pour le départ."
-    jump plage
+    jump plage_elf
 
 label info_rdv_centaure:
     ppElf "Je ne peux pas accepter un tel destin, je refuse de me marier avec lui."
@@ -48,9 +48,9 @@ label info_rdv_centaure:
     centaure "Nous pourrons ensuite accéder à leur cité sous-marine."
     ppElf "Et comment sommes-nous supposé respirer sous l'eau ?"
     centaure "Ne t'en fais pas, d'après les dires, nous n'aurons pas besoin d'aller sous l'eau."
-    jump plage
+    jump plage_elf
 
-label plage:
+label plage_elf:
     scene bg plage
     show Hiris at left
     with fade
@@ -75,29 +75,29 @@ label plage:
 
     menu:
         "Bonjour, je me présente, Hiris.":
-            jump bonjour_hiris
+            jump bonjour_hiris_elf
         "Bonjour messieurs, ravi de faire votre connaissance.":
-            jump bonjour_enchante
+            jump bonjour_enchante_elf
 
-label bonjour_hiris:
+label bonjour_hiris_elf:
     ppElf "Bonjour je me présente, Hiris, la princesse des Elfes en personne."
-    jump presentationFamilleSirene
+    jump presentationFamilleSirene_elf
 
-label bonjour_enchante:
+label bonjour_enchante_elf:
     ppElf "Bonjour messieurs, ravi de faire votre connaissance."
-    jump presentationFamilleSirene
+    jump presentationFamilleSirene_elf
 
-label presentationFamilleSirene:
+label presentationFamilleSirene_elf:
     roiSirene "Bonjour, enchanté mademoiselle, je suis Morgon, le roi d'Océanos."
     princeSirene "Echanté de faire votre connaissance, ma gente demoiselle, je suis Metilay, le prince de la même cité."
     menu:
         "Le prince est aussi ravissant que sur le tableau.":
-            jump ecouteConversation
+            jump ecouteConversation_elf
         "Le prince n'est pas aussi attrayant que ce que j'imaginais.":
-            jump ecouteConversation
+            jump ecouteConversation_elf
 
-label ecouteConversation:
+label ecouteConversation_elf:
     roiSirene "Comme mon messager vous l’a transmis, je suis d’avis que cette guerre a déjà bien assez durée."
     roiSirene "C’est alors que j’ai pensé que le moyen d’y mettre un terme définitivement était un mariage arrangé qui unirait nos clans pour l’éternité."
     princeSirene "Par ailleurs, la princesse de cette Cité aurait aimé vous rencontrer en privé." 
-    jump rencontrePrincesse
+    jump rencontrePrincesse_elf
