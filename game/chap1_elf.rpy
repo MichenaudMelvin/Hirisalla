@@ -1,7 +1,16 @@
 label choix_elf:
-    scene bg elf    
+    scene bg elf
+    with fade
+    show Hiris:
+        xalign -0.5
+    with move
+
+    show centaure:
+        xalign 1.5
+    with move
     show Hiris at left
     show centaure at right
+    with move
     play music "audio/theme_elfe.mp3"
     play sound "audio/arrive_centaure.mp3"
     pause 3

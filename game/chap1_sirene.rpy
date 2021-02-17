@@ -4,14 +4,14 @@ label choix_sirene:
     show Edalla:
         xalign -0.5
     with move
-    show Amma:
+    show amma:
         xalign 1.5
     with move
     show Edalla at left
     with move
-    show Amma at right
+    n "La princesse des Océanos, Edalla s'en alla rejoindre son amie qu'elle considairait comme sa pettie sœur, la jeune tortue Amma."
+    show amma at right
     with move
-
     tortue "Salutations princesse ! Vous allez b-b-bien ?"
     ppSirene "Bien et toi, Amma ?"
     tortue "Bien, m-m-merci, j’ai m-messire le-le Roi qui m’a d-demandé d-de vous passer un message."
@@ -42,17 +42,17 @@ label confiance_sirene:
     show Edalla:
         xalign -0.5
     with move
-    show Amma:
+    show amma:
         xalign 1.5
     with move
-    
+
     scene bg ambassadeSirene
-    show roiSirene:
+    show Morgon:
         xalign 1.5
     with move
     show Edalla at left
     with move
-    show roiSirene at right
+    show Morgon at right
     with move
 
     roiSirene "Ma fille, vous voilà !"
@@ -68,7 +68,7 @@ label confiance_sirene:
     ppSirene "Si cela peut offrir une nouvelle paix à notre famille… j’accepte"
     roiSirene "Je m’en excuse mais nous avons dû faire ce choix très rapidement." 
     roiSirene "Mais s’il devient irrespectueux ou il devient un cauchemar pour toi, tu auras le droit de rompre ce mariage, ne t’inquiète pas des conséquences." 
-    show Amma:
+    show amma:
         xalign 1.5
     with move
     show Edalla:
@@ -84,12 +84,12 @@ label rencontre_famille_prevu_sirene:
     show Edalla triste:
         xalign -0.5
     with move
-    show roiSirene:
+    show Morgon:
         xalign 1.5
     with move
     show Edalla triste at left
     with move
-    show roiSirene at right
+    show Morgon at right
     with move
 
     roiSirene "Vous êtes pile à l'heure ma fille !"
@@ -105,7 +105,7 @@ label rencontre_famille_avance_sirene:
     tortue "Mais j’aurais p-p-pu mal entendre, p-princesse."
     ppSirene "Comment ont-ils décidés une chose pareille sans me consulter avant ?"
     tortue "Je ne sais p-pas p-p-princesse."
-    show Amma:
+    show amma:
         xalign 1.5
     with move
     show Edalla:
@@ -121,19 +121,19 @@ label rencontre_famille_avance_sirene:
     with move
     show Edalla at left
     with move
-    show roiSirene:
+    show Morgon:
         xalign 1.5
     with move
-    show roiSirene at right
+    show Morgon at right
     with move
     #sirene triste
     roiSirene "Ma fille ? Vous êtes en avance, pourquoi une arrivée aussi précipitée."
     ppSirene "Attendez, Père, pourquoi une telle décision sans me consulter avant ?"
     roiSirene "Ah, vous sais déjà une des nouvelles que j’allais t’annoncer. Mais qui vous a annoncé cette nouvelle ?"
-    show Amma:
+    show amma:
         xalign -0.5
     with move
-    show Amma:
+    show amma:
         xalign 0.2
     with move
     tortue "C’est… m-moi"
@@ -141,7 +141,7 @@ label rencontre_famille_avance_sirene:
     tortue "Je vous p-prie de m’excuser."
     roiSirene "J’accepte vos excuses, mais pour cette fois-ci ma petite Amma."
     tortue "M-Merci !"
-    show Amma:
+    show amma:
         xalign -0.5
     with move
 
@@ -160,6 +160,10 @@ label rencontre_famille_avance_sirene:
                 xalign -0.5
             with move
             hide Edalla
+            show Morgon:
+                xalign 1.5
+            with move
+            hide roiSirene
             jump discution_tortue_sirene
         "Regarder le tableau":
             ppSirene "{i}Ce tableau présente un charmant jeune homme dont les traits laissent dégager une beauté masculine et une virilité accrue.{/i}" 
