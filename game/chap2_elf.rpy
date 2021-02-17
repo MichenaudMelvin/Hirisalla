@@ -22,7 +22,6 @@ label discution_reine_elf:
 label info_rdv_centaure_elf:
     centaure "OK"
     ppElf "c rigolo"
-    $ possibiliteFuite = True
     jump plage_elf
 
 label info_rdv_reine_elf:
@@ -79,14 +78,7 @@ label presentationFamilleSirene_elf:
         "Le prince est aussi beau que sur la peinture":
             jump ecouteConversation_elf
         "Le prince n'est pas aussi beau que ce que j'imaginais":
-            if (possibiliteFuite == True):
-                menu:
-                    "Vous décidez de fuir":
-                        jump fuite_elf
-                    "Vous décidez de rester":
-                        jump ecouteConversation_elf
-            else:
-                jump ecouteConversation_elf
+            jump ecouteConversation_elf
 
 label ecouteConversation_elf:
     roiSirene "blabla"
@@ -94,8 +86,4 @@ label ecouteConversation_elf:
     roiSirene "Pour que la paix soit durable il nous faut un mariage"
     roiSirene "Notre fille est absente." 
     roiSirene "Elle a demandé a vous voir en privé"
-    jump rencontrePrincesse_elf
-
-label fuite_elf:
-    ppElf "Je vais aux toilettes"
     jump rencontrePrincesse_elf

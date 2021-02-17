@@ -12,16 +12,25 @@ define centaure = Character("Garkiel") #Centaure
 define tortue = Character ("Amma") #Tortue
 
 label start:
-    $ possibiliteFuite = False
     $ qteDragueReussi = False
     $ qteObservationReussi = False
-    scene bg room
-    show Narrateur
-
+    scene bg truc
+    n "Le monde est abandonné par la guerre faisant rage depuis des siècles entre 2 camps, la Terre et la Mer, les elfes Tyrriens contre les sirènes d’Océanos."
+    n "Mais en ces temps de guerres, ces 2 ennemis de toujours sont enfin parvenus à trouver un accord qui pourrait mettre un terme à cet interminable conflit."
+    show Edalla:
+        xalign 1.5
+    with move
+    show Hiris:
+        xalign -0.5
+    with move
+    show Edalla at right
+    with move
+    show Hiris at left
+    with move
     menu:
-        n "Chosisez un point de vue"
-        "Point de vue de la sirène":
+        n "Quel personnage voulez-vous incarner ?"
+        "Edalla la sirène":
             jump choix_sirene
-        "Point de vue de l'elf":
+        "Hiris l'elf":
             jump choix_elf
     return

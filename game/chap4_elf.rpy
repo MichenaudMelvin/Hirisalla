@@ -21,8 +21,6 @@ label finGuerre_elf:
 label discution_elf:
     princeElf "Wesh on fait koi ????????"
     if (qteObservationReussi == True):
-        jump discutionEntrePrinces_elf
-    else:
         menu:
             "declaration":
                 jump declaration_elf
@@ -30,6 +28,12 @@ label discution_elf:
                 jump finMariageArrange_elf
             "romance entre princes":
                 jump discutionEntrePrinces_elf
+    else:
+        menu:
+            "declaration":
+                jump declaration_elf
+            "mariage arrangé":
+                jump finMariageArrange_elf
 
 label finMariageArrange_elf:
     #transition et mise en scène

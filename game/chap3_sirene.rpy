@@ -1,75 +1,82 @@
 label rencontrePrincesse_sirene:
     #Notify("Chapitre 3")
-    scene bg ambassadeSirene
+    scene bg ambassadeElf
     with fade
 
-    show Hiris:
+    show Edalla:
         xalign 1.5
     with move
-    show Edalla:
+    show Hiris:
         xalign -0.5
     with move
-    show Hiris at right
+    show Edalla at right
     with move
-    show Edalla at left
+    show Hiris at left
     with move
 
-    ppSirene "Saluuut"
-    ppSirene "jme présente je suis une sirene"
-    ppSirene "blabla"
-    ppElf "ok"
-    ppSirene "c quoi ton avis sur ce mariage"
+    ppElf "Saluuut"
+    ppElf "jme présente je suis une sirene"
+    ppElf "blabla"
+    ppSirene "ok"
+    ppElf "c quoi ton avis sur ce mariage"
     menu:
-        "aller en ville":
+        "On va en ville ?":
+            ppSirene "On va en ville ?"
             jump discutionVille_sirene
-        "Rester dans la chambre":
-            jump discutionChambre_sirene
+        "On parle politique ?":
+            ppSirene "On parle politique ?"
+            jump discutionPolitique_sirene
+        "On parle de notre vie ?":
+            ppSirene "On parle de notre vie ?"
+            jump vieDePrincesse_sirene
 
 label discutionVille_sirene:
-    scene bg villeSirene
+    scene bg villeElf
     with fade
-    ppSirene "ah oausi nik les vilageois"
-    ppElf "ouais carrement"
+    ppElf "ah oausi nik les vilageois"
+    ppSirene "ouais carrement"
     menu:
-        "Ah ouais trop stylé votre ville de poisson":
-            jump vieDePrincesse_sirene
-        "On va voir le prince ?":
+        "On stalk les princes ?":
             jump dialogueSurPrinces_sirene
+        "Mon amie amma peut observer les princes":
+            jump qteTortue_sirene
 
-label discutionChambre_sirene:
-    ppSirene "on parle de truc politiques"
-    ppElf "ah ouais trop relou l'armé"
+label discutionPolitique_sirene:
+    ppElf "on parle de truc politiques"
+    ppSirene "ah ouais trop relou l'armé"
     menu:
         "On continue à parler en ville ?":
-            ppElf "On continue à parler en ville ?"
+            ppSirene "On continue à parler en ville ?"
             jump discutionVille_sirene
-        "Continuer la discution":
-            ppElf "ok je sui pas d'accord avec toa"
-            ppSirene "ah bah si c'est comme ça"
-            ppSirene "tu hors de ma vue"
+        "Sortir de la pièce":
+            ppSirene "ok je sui pas d'accord avec toa"
+            ppElf "ah bah si c'est comme ça"
+            ppElf "tu hors de ma vue"
             #faire une transition
             jump excusesPrincesse_sirene
-    
+
 label vieDePrincesse_sirene:
     $ qteDragueReussi = True
-    ppSirene "ouais je sais pas de quoi on peut parler"
-    ppElf "bah ferme ta gueule"
-    scene bg ambassadeSirene
+    ppElf "ouais je sais pas de quoi on peut parler"
+    ppSirene "bah ferme ta gueule"
+    scene bg ambassadeElf
     with fade
-    jump ambassadeExcuses_sirene
+    jump discution_sirene
+
+label qteTortue_sirene:
+    $ qteObservationReussi = True
+    ppSirene "cimer Amma, ta bien stalk les princes"
+    jump discution_sirene
+
 
 label dialogueSurPrinces_sirene:
-    $ qteObservationReussi = True
-    ppElf "ouais nik les princes"
-    ppSirene "ouais carrement"
-    scene bg ambassadeSirene
+    ppSirene "ouais nik les princes"
+    ppElf "ouais carrement"
+    scene bg ambassadeElf
     with fade
-    jump ambassadeExcuses_sirene
+    jump discution_sirene
 
 label excusesPrincesse_sirene:
-    menu:
-        reineElf "Tu t'excuse ?"
-        "Oui":
-            jump ambassadeExcuses_sirene
-        "Non":
-            jump ambassadeNonExcuses_sirene
+    roiSirene "Tu t'excuse ?"
+    ppSirene "Oui..."
+    jump discution_sirene
