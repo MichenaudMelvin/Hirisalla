@@ -20,57 +20,15 @@ label finGuerre_elf:
 
 label discution_elf:
     princeElf "Wesh on fait koi ????????"
-    if (qteObservationReussi == True):
-        menu:
-            "declaration":
-                jump declaration_elf
-            "mariage arrangé":
-                jump finMariageArrange_elf
-            "romance entre princes":
-                jump discutionEntrePrinces_elf
-    else:
-        menu:
-            "declaration":
-                jump declaration_elf
-            "mariage arrangé":
-                jump finMariageArrange_elf
+    menu:
+        "declaration":
+            jump declaration_elf
+        "mariage arrangé":
+            jump finMariageArrange_elf
 
 label finMariageArrange_elf:
     #transition et mise en scène
     ppElf "trop relou jvoulais pas etre avec ce fdp"
-    return
-
-label discutionEntrePrinces_elf:
-    show princeSirene:
-        xalign 1.5
-    with move
-    show princeElf:
-        xalign -0.5
-    with move
-    show princeSirene at right
-    with move
-    show princeElf at left
-    with move
-
-    menu:
-        princeSirene "on baise ?"
-        "Oui":
-            jump finPrinceLove_elf
-        "Non":
-            show princeSirene:
-                xalign 1.5
-            with move
-            show princeElf:
-                xalign -0.5
-            with move
-            hide princeElf
-            hide princeSirene
-            jump finMariageArrange_elf
-
-label finPrinceLove_elf:
-    princeSirene "trop bien"
-    princeElf "oui"
-    #fin et mise en scène
     return
 
 label declaration_elf:
