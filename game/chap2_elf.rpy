@@ -1,101 +1,103 @@
 label discution_centaure: 
+    scene bg elf
+    with fade
     show Hiris at left
     show centaure at right
-    menu:
-        centaure "Tu accepterais de te sacrifier pour ta patrie ?"
-        "Oui":
+    centaure "Je ne suis pas d'accord que ce soit toi qui ai le devoir de te sacrifier pour les autres."
+    centaure "Mais nous n'avons pas le choix, tu peux tous nous sauver."
+    menu:    
+        centaure "Serais-tu capable de te marier pour le bien de tous ?"
+        "Je vais le faire, je n'ai pas le choix.":
             play sound "audio/galop.ogg"
             pause 3
             show centaure:
                 xalign 1.5
             with move
             hide centaure
-            jump info_rdv_reine
-        "Non":
+            jump discution_reine
+        "Je ne peux pas accepter...":
             jump info_rdv_centaure
 
 label discution_reine:
-    reineElf "Wesh"
-    reineElf "cest un dialogue"
-    jump info_rdv_reine
-
-label info_rdv_centaure:
-    centaure "OK"
-    ppElf "c rigolo"
-    $ possibiliteFuite = True
-    jump plage
-
-label info_rdv_reine:
     stop sound
+    scene ambassade
+    with fade
+    show Hiris:
+        xalign -0.5
+    with move
+    show Hiris at left
     show callyon:
         xalign 1.5
     with move
     show callyon at right
     with move
-    reineElf "VOila ce qui va ce passer"
-    ppElf "OK lourd"
-    ppElf "j'ai pas envie"
+    ppElf "J'y ai réfléchis ma Reine."
+    reineElf "Je vous écoute."
+    ppElf "J'accomplirai mon devoir afin d’apporter la paix, la sécurité et la prospérité à notre peuple."
+    reineElf "Merci de ton dévouement, nous rejoindrons la plage dans un premier temps puis nous irons dans leur village par convoi royal."
+    ppElf "Leur village se situe sous l’eau, comment sommes-nous censés respirer ?"
+    reineElf "De ce que j’ai appris, nous n’aurons pas à aller sous l’eau, le village est protégé par une bulle d’air"
+    ppElf "Je vois, je vous retrouve demain sur la plage pour le départ."
+    jump plage
+
+label info_rdv_centaure:
+    ppElf "Je ne peux pas accepter un tel destin, je refuse de me marier avec lui."
+    centaure "Je suis de ton avis, mais ce sont les ordres de la reine, tu n'as pas le choix."
+    centaure "Le rendez-vous aura lieu dans leur cité."
+    centaure "Le premier point de ralliement sera sur la plage."
+    centaure "Nous pourrons ensuite accéder à leur cité sous-marine."
+    ppElf "Et comment sommes-nous supposé respirer sous l'eau ?"
+    centaure "Ne t'en fais pas, d'après les dires, nous n'aurons pas besoin d'aller sous l'eau."
     jump plage
 
 label plage:
     scene bg plage
+    show Hiris at left
     with fade
     show Hiris at left
-    ppElf "c la plage"
-    ppElf "elle est la la ville"
-    n "elipse de 2h"
+    ppElf "{i} Il semblerait que je sois arrivée au point de rendez-vous. {/i}"
+    ppElf "{i} Woaw, voilà à quoi ressemble la cité des Sirènes. {/i}"
+    scene bg ville sirene
+    show Hiris at left
+    with fade  
+    pause 3
+    show roiSirene:
+        xalign 1.5
+    with move
     show princeSirene:
         xalign 1.5
     with move
-    show roiSirene:
-        xalign 1.5
+    show roiSirene at right
     with move
-    show princeSirene at right
-    with move
-    show roiSirene:
+    show princeSirene:
         xalign 0.85
     with move
-    princeSirene "Bonjour"
-    roiSirene "Bonsoir"
 
     menu:
-        "Bonjour je me présente, Hiris":
+        "Bonjour, je me présente, Hiris.":
             jump bonjour_hiris
-        "Bonjour enchanté de faire votre connaissance":
+        "Bonjour messieurs, ravi de faire votre connaissance.":
             jump bonjour_enchante
 
 label bonjour_hiris:
-    ppElf "Bonjour je me présente, Hiris"
+    ppElf "Bonjour je me présente, Hiris, la princesse des Elfes en personne."
     jump presentationFamilleSirene
 
 label bonjour_enchante:
-    ppElf "Bonjour enchanté de faire votre connaissance"
+    ppElf "Bonjour messieurs, ravi de faire votre connaissance."
     jump presentationFamilleSirene
 
 label presentationFamilleSirene:
-    roiSirene "Bonjour je suis Morgon, la roi"
-    princeSirene "Bonjour je suis Metilay, le prince"
+    roiSirene "Bonjour, enchanté mademoiselle, je suis Morgon, le roi d'Océanos."
+    princeSirene "Echanté de faire votre connaissance, ma gente demoiselle, je suis Metilay, le prince de la même cité."
     menu:
-        "Le prince est aussi beau que sur la peinture":
+        "Le prince est aussi ravissant que sur le tableau.":
             jump ecouteConversation
-        "Le prince n'est pas aussi beau que ce que j'imaginais":
-            if (possibiliteFuite == True):
-                menu:
-                    "Vous décidez de fuir":
-                        jump fuite
-                    "Vous décidez de rester":
-                        jump ecouteConversation
-            else:
-                jump ecouteConversation
+        "Le prince n'est pas aussi attrayant que ce que j'imaginais.":
+            jump ecouteConversation
 
 label ecouteConversation:
-    roiSirene "blabla"
-    princeSirene "blabla"
-    roiSirene "Pour que la paix soit durable il nous faut un mariage"
-    roiSirene "Notre fille est absente." 
-    roiSirene "Elle a demandé a vous voir en privé"
-    jump rencontrePrincesse
-
-label fuite:
-    ppElf "Je vais aux toilettes"
+    roiSirene "Comme mon messager vous l’a transmis, je suis d’avis que cette guerre a déjà bien assez durée."
+    roiSirene "C’est alors que j’ai pensé que le moyen d’y mettre un terme définitivement était un mariage arrangé qui unirait nos clans pour l’éternité."
+    princeSirene "Par ailleurs, la princesse de cette Cité aurait aimé vous rencontrer en privé." 
     jump rencontrePrincesse
