@@ -1,3 +1,3 @@
 # Workshop visual novel
 
-https://github.com/MichenaudMelvin/workshop_visual_novel/blob/main/game/guy/main_menu.png
+https://raw.githubusercontent.com/MichenaudMelvin/workshop_visual_novel/main/game/gui/main_menu.png?token=ARZSJLZU5HC33WXQSLRURR3AF3X7W
