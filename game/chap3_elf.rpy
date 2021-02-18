@@ -330,11 +330,7 @@ label excusesPrincesse_elf:
         "Présenter ses excuses":
             jump ambassadeExcuses_elf
         "Ignorer":
-<<<<<<< Updated upstream
-            scene bg ambassadesirene_elf
-=======
             scene ambassade_sirene
->>>>>>> Stashed changes
             with fade
 
             show morgon_normal:

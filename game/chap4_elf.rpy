@@ -17,16 +17,10 @@ label ambassadeExcuses_elf:
     ppSirene "Ne vous en faîtes pas, je vous pardonne."
     jump conseil_ambassade_excuse_elf
 
-<<<<<<< Updated upstream
 label conseil_ambassade_excuse_elf:
-    hide edalla
-    show morgon:
-=======
-label conseil_ambassade_excuse:
     stop music fadeout 2.0
     play music "audio/ambassade.mp3" fadeout 2.0
     show edalla_normal:
->>>>>>> Stashed changes
         xalign 1.5
     with move
     hide edalla_normal
@@ -57,15 +51,9 @@ label choix_mariage_goodEnding_elf:
         "Accepter le mariage avec le Metilay":
             jump finMariageArrange_elf
 
-<<<<<<< Updated upstream
 label fin_joyeuse_elf:
-    show callyon:
-        xalign 1.5
-=======
-label fin_joyeuse:
     show callyon_normal:
         xalign 0.75
->>>>>>> Stashed changes
     with move
     show edalla_normal:
         xalign 1.5
@@ -96,13 +84,9 @@ label fin_joyeuse:
     pause 360
     return
 
-<<<<<<< Updated upstream
 label conseil_ambassade_nonExcuse_elf:
-=======
-label conseil_ambassade_nonExcuse:
     stop music fadeout 2.0
     play music "audio/ambassade.mp3" fadeout 2.0
->>>>>>> Stashed changes
     n "Les deux familles royales se réunissent dans l’ambassade et commence alors une discussion des plus importantes."
     roiSirene "Princesse des Tyrriens, fille de Callyon, j’ai ouï-dire ton désaccord envers cette union qui a pour but, je vous le rappelle, d’unir nos deux familles."
     jump ambassadeNonExcuses_elf
@@ -130,10 +114,6 @@ label finGuerre_elf:
     n "La guerre ne s'arrêtera sans doute jamais et sera encore plus meurtrière qu'elle ne l'a jamais été."
     window hide
     pause 360
-<<<<<<< Updated upstream
-=======
-    
->>>>>>> Stashed changes
     return
 
 label excuse_elf:
@@ -151,12 +131,8 @@ label choix_mariage_badEnding_elf:
         "Accepter le mariage avec le Metilay":
             jump MariageArrange_elf
 
-<<<<<<< Updated upstream
 label fin_triste_elf:
-=======
-label fin_triste:
     ppElf "Je souhaiterais prendre pour épouse votre fille, Edalla."
->>>>>>> Stashed changes
     roiSirene "Si cela convient à ma fille, je n’y vois pas d’inconvénient."
     ppSirene "Je ne peux pas accepter cela en si peu de temps... J’accepte toutefois de lui donner mon amitié pour un monde de paix qui grandira dans la tranquillité et la sérénité."
 

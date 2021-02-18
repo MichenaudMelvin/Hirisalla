@@ -131,36 +131,32 @@ label rencontre_famille_avance_elf:
     reineElf "Que me vaut ta visite si précipitée ?"
     menu:
         "Lui dire ce que vous savez":
-            jump description_mariage
+            jump description_mariage_elf
         "Lui dire subtilement que vous êtes au courant":
-            jump description_mariage
+            jump description_mariage_elf
 
 label description_mariage_elf:
     ppElf "Je sais ce que vous avez prévu de faire de moi !"
     reineElf "On a pas le choix ma chérie, c'est pour sauver notre royaume."
     reineElf "Tu dois te marier pour tous nous sauver !"
     reineElf "Et puis le prince est magnifique !"
-    jump tableau_prince
+    jump tableau_prince_elf
 
-label tableau_prince:
-    reineElf "Regarde le tableau !"
+label tableau_prince_elf:
     menu : 
+        reineElf "Regarde le tableau !"
         "Critiquer":
-            jump contradiction
+            jump contradiction_elf
         "Complimenter subtilement":
-            jump accord
+            jump accord_elf
 
-label contradiction:   
+label contradiction_elf:   
     show hiris_angry at left        
     hide hiris
     ppElf "Mais je m'en fiche, il a des écailles, des oreilles en forme de nageoire, c'est affreux !"
     ppElf "Je ne pourrais jamais accepter cela."
-    jump discution_centaure
+    jump discution_centaure_elf
 
 label accord_elf:
     ppElf "Si c'est la seule solution, on va dire que cela aurait pu être pire."
-<<<<<<< Updated upstream
     jump discution_reine_elf
-=======
-    jump plage
->>>>>>> Stashed changes

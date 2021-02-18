@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream
 label discution_centaure_elf:
-    scene bg elf
-=======
-label discution_centaure: 
     scene ville_elfe
->>>>>>> Stashed changes
     with fade
     show hiris_angry:
         xalign -0.5
@@ -38,13 +33,8 @@ label discution_reine_elf:
     show Hiris:
         xalign -0.5
     with move
-<<<<<<< Updated upstream
-    show Hiris at left
-    show callyon:
-=======
     show hiris at left
     show callyon_normal:
->>>>>>> Stashed changes
         xalign 1.5
     with move
     show callyon_normal at right
@@ -68,15 +58,9 @@ label info_rdv_centaure:
     centaure "Ne t'en fais pas, d'après les dires, nous n'aurons pas besoin d'aller sous l'eau."
     jump plage_elf
 
-<<<<<<< Updated upstream
 label plage_elf:
-    scene bg plage
-    show Hiris at left
-=======
-label plage:
     scene ville_sirene
     show hiris at left
->>>>>>> Stashed changes
     with fade
     show Hiris at left
     ppElf "{i} Il semblerait que je sois arrivée au point de rendez-vous. {/i}"

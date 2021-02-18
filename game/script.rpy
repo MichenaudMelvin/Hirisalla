@@ -12,7 +12,6 @@ define centaure = Character(_("Garkiel"), color="#eec5a9", what_outlines=[(1, "#
 define tortue = Character ("Amma", color="#7d9062", what_outlines=[(1, "#000000")]) #Tortue
 
 label start:
-    stop music fadeout 5.0
     $ dispute = False
     $ dragueReussi = False
     scene fond_introduction
@@ -34,10 +33,12 @@ label start:
             show hiris:
                 xalign 1.5
             with move
+            stop music fadeout 5.0
             jump choix_sirene
         "Hiris l'elf":
             show edalla_normal:
                 xalign -0.5
             with move
+            stop music fadeout 5.0
             jump choix_elf
     return
