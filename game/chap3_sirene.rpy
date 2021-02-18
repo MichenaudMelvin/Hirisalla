@@ -2,15 +2,15 @@ label rencontrePrincesse_sirene:
     scene bg ambassadeElf
     with fade
 
-    show Edalla:
+    show edalla_normal:
         xalign 1.5
     with move
-    show Hiris:
+    show hiris:
         xalign -0.5
     with move
-    show Edalla at right
+    show edalla_normal at right
     with move
-    show Hiris at left
+    show hiris at left
     with move
 
     ppElf "Je me présente Hiris, fille de Callyon, c'est un honneur pour moi de pouvoir vous inviter sous mon toit."
@@ -31,15 +31,15 @@ label discutionVille_sirene:
     ppElf "Bien-sur, moi aussi je suis fatigué de rester entre ces murs, allons en ville"
     scene bg villeElf
     with fade
-    show Edalla:
+    show edalla_normal:
         xalign 1.5
     with move
-    show Hiris:
+    show hiris:
         xalign -0.5
     with move
-    show Edalla at right
+    show edalla_normal at right
     with move
-    show Hiris at left
+    show hiris at left
     with move
     ppSirene "C'est vraiment magnifique ici, j'adore les couleurs et l'air est si pur…"
     ppElf "Contente de voir que cela vous plait princesse, vous avez faim ? Je connais une excellente auberge non loin d’ici."
