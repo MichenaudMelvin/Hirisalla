@@ -1,14 +1,14 @@
-﻿define n = Character("Narrateur")
+﻿define n = Character(_("Narrateur"), color="FFFFFF") #Narrateur
 
 define ppSirene = Character(_("Edalla"), color="#FFA500") #Femme
 define roiSirene = Character("Morgon") #Homme
 define princeSirene = Character("Metilay") #Homme
 
-define ppElf = Character(_("Hiris"), color="#FFFF00") #Femme
+define ppElf = Character(_("Hiris"), color="#32b614") #Femme
 define reineElf = Character("Callyon") #Femme
 define princeElf = Character("Keidal") #Homme
 
-define centaure = Character("Garkiel") #Centaure
+define centaure = Character(_("Garkiel"), color="#eec5a9") #Centaure
 define tortue = Character ("Amma") #Tortue
 
 label start:

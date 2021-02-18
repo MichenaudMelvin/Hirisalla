@@ -1,4 +1,7 @@
 label discution_sirene:
+    scene bg ambassadeElf
+    with fade
+    
     ppElf "ouais lourd on est a l'ambassade"
     ppSirene "ouais lourd on fait un accord de paix ouais"
     princeSirene "Wesh du coup, on fait koi ????????"
@@ -36,7 +39,7 @@ label discutionEntrePrincesses_sirene:
     ppSirene "ok"
     ppSirene "on fait koi"
     ppElf "jsp"
-    if (qteDragueReussi == True):
+    if (DragueReussi == True):
         jump finHeureuse_sirene   
     else:
         jump finTrise_sirene
