@@ -1,16 +1,4 @@
 label discution_sirene:
-    scene bg ambassadeElf
-    with fade
-    show Edalla:
-        xalign 1.5
-    with move
-    show Hiris:
-        xalign -0.5
-    with move
-    show Edalla at right
-    with move
-    show Hiris at left
-    with move
     reineElf "Bien, nous sommes donc tous réunis pour metre un termes à ces conflits."
     roiSirene "Et donc marier nos enfants."
     roiSirene "Edalla, le destin d'Océanos repose sur toi."
@@ -36,7 +24,30 @@ label finMariageArrange_sirene:
 label declaration_sirene:
     if (dragueReussi == True):
         jump finHeureuse_sirene   
+    if (dispute == True):
+        show keidal_normal:
+            xalign 1.5
+        with move
+        show hiris_angry:
+            xalign 1.5
+        with move
+        show hiris_angry:
+            xalign 0.85
+        with move
+        hide edalla_triste
+        show edalla_pleure:
+            xalign -0.5
+        with move
+        hide morgon_normal
+        show morgon_surpris:
+            xalign 0.15
+        hide callyon_normal
+        show callyon_colere at right
+        ppElf "Vous vous moquez de moi ou quoi ?!"
+        ppElf "Je refuse !"
+        jump finTrise_sirene
     else:
+        ppElf "Je refuse, je ne vous connais pas beaucoup."
         jump finTrise_sirene
 
 label finHeureuse_sirene:
@@ -53,7 +64,9 @@ label finHeureuse_sirene:
     return
 
 label finTrise_sirene:
-    ppElf "Je refuse, je ne vous connais pas beaucoup."
+    roiSirene "Alors qu'il en soit ainsi, que les dieux bénissent ce mariage et que la paix soit durable pour les années à venir."
+    n "Ainsi, le prince Keidal et la princesse Edalla se marièrent et eurent beaucoup d’enfants." 
+    n "Les conflits entre les deux peuples furent stoppés."
     scene credits
     with fade
     #play music "audio/drama_2.mp3" fadeout 2.0

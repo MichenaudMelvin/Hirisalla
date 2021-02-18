@@ -131,10 +131,28 @@ label decouverteFamilleRoyale_sirene:
             jump presentationFamilleSirene_sirene
 
 label presentationFamilleSirene_sirene:
+    show morgon_normal:
+        xalign -0.5
+    with move
+    show metilay_heureux:
+        xalign -0.5
+    with move
+    show metilay_heureux:
+        xalign 0.15
+    with move
     hide edalla_joie
     show edalla_normal at left
     princeSirene "Je suis Metilay, fils du roi Morgon, enchanté également."
+    hide metilay_heureux
+    show metilay_normal:
+        xalign 0.15
+    hide edalla_normal
+    show edalla_normal at left
+    hide keidal_normal
+    show keidal_joyeux at right
     princeElf "Je suis Keidal, fils aîné de la Reine Callyon, c'est un plaisir de faire votre connaissance."
+    hide keidal_joyeux
+    show keidal_normal at right
     menu:
         "Le prince est aussi beau que sur la peinture":
             ppSirene "{i}Il est aussi beau que ce sur le tableau.{/i}"
