@@ -1,19 +1,19 @@
-﻿define n = Character(_("Narrateur"), color="FFFFFF") #Narrateur
+﻿define n = Character(_("Narrateur"), color="#FFFFFF", what_outlines=[(1, "#000000")]) #Narrateur
 
-define ppSirene = Character(_("Edalla"), color="#FFA500") #Femme
-define roiSirene = Character("Morgon") #Homme
-define princeSirene = Character("Metilay") #Homme
+define ppSirene = Character(_("Edalla"), color="#FFA500", what_outlines=[(1, "#000000")]) #Femme
+define roiSirene = Character("Morgon", what_outlines=[(1, "#000000")]) #Homme
+define princeSirene = Character("Metilay", what_outlines=[(1, "#000000")]) #Homme
 
-define ppElf = Character(_("Hiris"), color="#32b614") #Femme
-define reineElf = Character("Callyon") #Femme
+define ppElf = Character(_("Hiris"), color="#32b614", what_outlines=[(1, "#000000")]) #Femme
+define reineElf = Character("Callyon", what_outlines=[(1, "#000000")]) #Femme
 define princeElf = Character("Keidal") #Homme
 
-define centaure = Character(_("Garkiel"), color="#eec5a9") #Centaure
-define tortue = Character ("Amma") #Tortue
+define centaure = Character(_("Garkiel"), color="#eec5a9", what_outlines=[(1, "#000000")]) #Centaure
+define tortue = Character ("Amma", what_outlines=[(1, "#000000")]) #Tortue
 
 label start:
     stop music fadeout 5.0
-    $ qteDragueReussi = False
+    $ dragueReussi = False
     scene bg truc
     n "Le monde est abandonné par la guerre faisant rage depuis des siècles entre deux camps, la Terre et la Mer, les elfes Tyrriens contre les sirènes d’Océanos."
     n "Mais en ces temps de guerres, ces deux ennemis de toujours sont enfin parvenus à trouver un accord qui pourrait mettre un terme à cet interminable conflit."

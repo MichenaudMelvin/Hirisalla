@@ -27,7 +27,7 @@ label rencontrePrincesse_sirene:
             jump vieDePrincesse_sirene
 
 label discutionVille_sirene:
-    $ DragueReussi = True
+    $ dragueReussi = True
     ppElf "Bien-sur, moi aussi je suis fatigué de rester entre ces murs, allons en ville"
     scene bg villeElf
     with fade
@@ -60,7 +60,7 @@ label discutionVille_sirene:
     jump discution_sirene  
 
 label discutionPolitique_sirene:
-    ppElf "Je vous trouve bien solennel, essaye d’être un peu plus naturelle."
+    ppElf "Je vous trouve bien solennelle, essaye d’être un peu plus naturelle."
     ppSirene "Je vais essayer de faire de mon mieux."
     ppElf "Vous êtes trop gentille Edalla."
     ppSirene "Vous aussi, tout le monde me dit ça…"
@@ -73,6 +73,8 @@ label discutionPolitique_sirene:
     ppElf "Callyon, mon honneur et ma famille sont aussi importants que mon peuple." 
     ppElf "Nous subissons également des lourdes pertes, la nature ne pousse même plus sur certaines zones de batailles."
     ppSirene "…"
+    scene bg ambassadeElf
+    with fade
     jump excusesPrincesse_sirene
 
 label vieDePrincesse_sirene:
@@ -98,6 +100,8 @@ label vieDePrincesse_sirene:
     jump discution_sirene
 
 label excusesPrincesse_sirene:
-    roiSirene "Tu t'excuse ?"
-    ppSirene "Oui..."
+    reineElf "Edalla, allez-vous vous excusez pour vos propos."
+    ppSirene "Oui… Désolé…"
+    ppSirene "Je regrette vraiment ce que j'ai pu dire à Hiris"
+    reineElf "Bien, passons au sujet du mariage."
     jump discution_sirene

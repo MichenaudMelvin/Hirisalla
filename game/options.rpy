@@ -39,7 +39,7 @@ define gui.about = _p("""
 ## or semicolons.
 
 
-define build.name = "Hirisalla"
+define build.name = ""
 
 
 
