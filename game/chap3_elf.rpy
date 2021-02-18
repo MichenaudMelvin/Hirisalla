@@ -1,20 +1,20 @@
-label rencontrePrincesse_elf:
+label rencontrePrincesse:
     #Notify("Chapitre 3")
     scene bg ambassadeSirene
     with fade
 
-    show Hiris:
+    show hiris:
         xalign 1.5
     with move
-    show Edalla:
+    show edalla:
         xalign -0.5
     with move
-    show Hiris at right
+    show hiris at right
     with move
-    show Edalla at left
+    show edalla at left
     with move
 
-    ppSirene "Bonjour, vous devez être la princesse Hiris qui va épouser mon frère."
+    ppSirene "Bonjour, vous devez être la princesse Hiris qui épousera mon frère."
     ppSirene "Je me présente, je suis la princesse Edalla, la fille du roi Morgon."
     ppSirene "J'aimerai parler avec toi de ce mariage."
     ppElf "Bonjour Edalla, enchantée de faire votre connaissance. J'accepte votre invitation à discuter."
@@ -26,24 +26,25 @@ label rencontrePrincesse_elf:
     ppElf "Avec plaisir, où souhaiteriez-vous aller ?"
     ppSirene "Comme vous préférez, nous pouvons aller nous balader en ville ou rester dans l'ambassade pour parler plus tranquillement."
     menu:
-        "Vous décidez d’aller vous balader en ville":
+        "Aller en ville":
             jump discutionVille_elf
         "Rester dans l'ambassade":
             jump discutionChambre_elf
 
 label discutionVille_elf:
+    n "Vous décidez d'aller vous balader en ville."
     ppElf "Je ne serais pas contre d'aller me balader à vos côtés en ville !"
     scene bg villeSirene
     with fade
     show edalla:
         xalign -0.5
     with move
-    show Hiris:
+    show hiris:
         xalign 1.5
     with move
     show edalla at left
     with move
-    show Hiris at right
+    show hiris at right
     with move
     ppSirene "Bienvenue dans la capitale d'Océanos."
     ppElf "C'est ravissant, c’est un endroit bien différent de mon pays."
@@ -83,7 +84,6 @@ label discutionVille_elf:
     ppElf "C'était vraiment délicieux !"
     ppSirene "Ça me fait plaisir de vous l'entendre dire." 
     ppSirene "Il me semble que vous aviez à faire, je ne voudrais pas vous retarder plus longtemps."
-
     menu:
         "Continuer à discuter":
             jump vieDePrincesse_elf
@@ -97,7 +97,7 @@ label discutionChambre_elf:
     ppSirene "Je m'excuse de cette question si soudaine mais..."
     ppSirene "Que pensez-vous de mon frère ?"
     ppElf "Pour le peu que je connaisse le prince, je reste mitigée, j'ai quelques difficultés à me projeter sur un potentiel marriage."
-    ppSirene "Je comprend votre inquiétude mais c'est un mal nécéssaire pour maintenir la paix pour les générations futures de nos peuples respectifs."
+    ppSirene "Je comprend votre inquiétude mais c'est nécessaire pour maintenir la paix pour les générations futures de nos peuples respectifs."
     ppElf "J'en ai pleinement conscience, mais il est inévitable que j'aimerai avoir la liberté de mes choix."
     ppElf "Pourquoi serait-ce à moi d'endosser ce fardeau que nos ancêtres nous ont légués ?"
     ppSirene "Ce n'est pas une décision qu'une personne peut négliger, ce mariage à un engagement politique conséquent."
@@ -105,7 +105,7 @@ label discutionChambre_elf:
     ppElf "..."
     ppSirene "..."
     menu:
-        "Demander à aller en ville pour changer de sujet":
+        "Demander à aller en ville":
             ppElf "Est-ce que vous seriez intéressée pour sortir en ville et discuter toutes les deux ?"
             jump discutionVille_elf
         "Maintenir son opinion":
@@ -114,7 +114,10 @@ label discutionChambre_elf:
             ppElf "Je suis contre une union forcée, j'ai besoin de pouvoir effectuer mes propres choix."
             ppSirene "La conversation n’a pas d’issue, je n'ai plus la force de parler avec quelqu’un qui refuse d’admettre les torts de son pays."
             ppSirene "Sortez de chez moi !"
-            #faire une transition
+            play sound "audio/porte.mp3"
+            show hiris:
+                xalign 1.5
+            with move
             jump excusesPrincesse_elf
     
 label vieDePrincesse_elf:
@@ -125,50 +128,170 @@ label vieDePrincesse_elf:
     ppElf "Parlez moi un peu de vous, quels sont vos centres d'intérêts ?"
     ppSirene "J’ai pour passion la chanson, vous aimeriez avoir une démonstration ?"
     ppElf "Avec plaisir !"
-    #music chant Edalla
-    pause 3
+    play music "audio/chant_sirene.mp3" fadeout 1.0
+    pause 1
+    pause 1
+    pause 1
+    pause 1
+    pause 1
+    pause 1
+    pause 1
+    pause 1
+    pause 1
+    pause 1
+    pause 1
+    pause 1
+    stop music fadeout 3.0
     ppElf "Vous chantez tellement bien !"
     ppSirene "Merci, vous me flattez."
     ppSirene "Il faudrait qu'on y aille, votre devoir vous attends."
+    show edalla:
+        xalign -0.5
+    with move
+    hide edalla
+    show hiris:
+        xalign -0.5
+    with move
+    hide hiris
     scene bg ambassadeSirene
     with fade
     jump conseil_ambassade_excuse
 
 label dialogueSurPrinces_elf:
+    stop music fadeout 2.0
+    play music "audio/theme_elfe.mp3" fadeout 2.0
     ppElf "Merci de m’avoir accordé votre temps et veuillez m’excuser, je me dois de retrouver le prince."
     ppSirene "N'ayez pas d'inquiétude, je vous laisse retourner à vos occupations."
     ppSirene "Merci pour cet après-midi princesse Hiris."
     ppElf "De même pour vous princesse Edalla."
-    show Edalla:
+    show edalla:
         xalign -0.5
     with move
-    hide Edalla
+    hide edalla
+    show hiris:
+        xalign -0.5
+    with move
+    hide hiris
     n "Vous marchez vers le château royal et vous tombez sur le prince sur le chemin mais il ne vous voit pas." 
-    n "Vous voyez une silhouette à ses côtés décidez de l’observer discrètement."
-    #QTE/POINT&CLICK CLIQUE SOURIS
-    #SI QTE REUSSI
-    #ppElf "KEIDAL ?! Que fais-tu ici ?""
-    #princeElf "Je suis en train de discuter avec un ami, rien de plus."
-    #ppElf "Vous êtes vachement proche quand même."
-    #princeElf "Non, pas spécialement. Viens, retournons à l'ambassade, une longue journée nous attend."
+    n "Vous voyez une silhouette à ses côtés et vous décidez de l’observer discrètement."
 
-    #SI QTE ECHOUÉ
-    #princeSirene "Princesse Hiris !  Vous allez bien ?"
-    #ppElf "Oui, je vous en remerci, j’ai cru apercevoir quelqu’un avec vous, je n’ai pas voulu vous déranger."
-    #princeSirene "Non ce n’était qu’un ami, mais êtes-vous sûr que tout va bien ?"
-    #ppElf "N'ayez crainte, tout va bien.
-    #princeSirene "Voulez-vous aller vous promener ? Je connais une excellente auberge."
-    #ppElf "Je suis désolée, je viens tout juste de manger. Allons plutôt nous promener dans un parc si vous le voulez bien."
+    menu :
+        "Monter à l'arbre pour mieux voir":
+            jump mauvais_choix_elf
+        "Se pencher derrière le buisson":
+            jump mauvais_choix_elf
+        "Ne rien faire":
+            jump bon_choix_elf
+
+label bon_choix_elf:
+    pause 1
+    n "Vous patientez quelques secondes et décider de ne plus vous cacher."      
+    pause 1
+    show metilay:
+        xalign -0.5
+    with move
+    show metilay:
+        xalign 0.15
+    with move
+    show keidal:
+        xalign -0.5
+    with move
+    show keidal at left
+    with move
+    ppElf "KEIDAL ?! Que fais-tu ici ?"
+    princeElf "Je suis en train de discuter avec un ami, rien de plus."
+    ppElf "Vous êtes vachement proche quand même."
+    show metilay:
+        xalign 0.35
+    with move
+    princeElf "Non, pas spécialement. Viens, retournons à l'ambassade, une longue journée nous attend."
+    show hiris:
+        xalign -0.5
+    with move
+    jump ambassadeExcuses_elf
+    
+label mauvais_choix_elf:
+    stop music fadeout 1.0
+    pause 1
+    n "Vous perdez l'équilibre pendant l'observation."
+    play sound "audio/chute_personnage.mp3"
+    pause 1
+    pause 1
+    pause 1
+    play music "audio/theme_elfe.mp3" fadeout 2.0
+    show metilay:
+        xalign -0.5
+    with move
+    show metilay at left
+    with move
+    princeSirene "Princesse Hiris ! Vous allez bien ?"
+    ppElf "Oui, je vous en remercie, j’ai cru apercevoir quelqu’un avec vous, je n’ai pas voulu vous déranger."
+    princeSirene "Non ce n’était qu’un ami, mais êtes-vous sûr que tout va bien ?"
+    ppElf "N'ayez crainte, tout va bien."
+    princeSirene "Voulez-vous aller vous promener ? Je connais une excellente auberge."
+    ppElf "Je suis désolée, je viens tout juste de manger. Allons plutôt nous promener dans un parc si vous le voulez bien."
+    ppElf "J’aimerai connaître votre point de vue sur notre union arrangée."
+    princeSirene "Je suis très honoré de me marier avec une femme aussi ravissante que vous." 
+    #roug-Hiris
+    ppElf "..."
+    princeSirene "Oh excusez-moi, je ne voulais pas vous mettre mal à l’aise." 
+    ppElf "Non tout va bien, vous m’avez surpris mais je suis contente que vous soyez aussi gentil et romantique." 
+    princeSirene "Vous m’envoyez ravi." 
+    stop music fadeout 2.0
     scene bg ambassadeSirene
     with fade
-    jump ambassadeExcuses_elf
+    jump conseil_ambassade_excuse_elf
 
 label excusesPrincesse_elf:
+    scene bg elf
+    with fade
+    n "Le lendemain..."
+    show centaure:
+        xalign -0.5
+    with move
+    show centaure at left
+    with move
+    show hiris:
+        xalign 1.5
+    with move
+    show hiris at right
+    with move
+
     centaure "Princesse nous partons à nouveau pour les terres des hommes poissons, pour décider de votre avenir."
     ppElf "Je suis la seule qui décide de quel avenir prendre, pour mon peuple et pour moi, partons."
+
+    scene bg villesirene
+    with fade
+    show hiris:
+        xalign 1.5
+    with move
+    show hiris at right
+    with move
     menu:
         n "Une fois dans l'ambassade, vous croisez la princesse qui ne semble pas vous voir."
-        "Aller la voir et présenter ses excuses":
+        "Présenter ses excuses":
             jump ambassadeExcuses_elf
         "Ignorer":
-            jump ambassadeNonExcuses_elf
+            scene bg ambassadesirene_elf
+            with fade
+
+            show morgon:
+             xalign 1.5
+            with move
+            show morgon:
+                xalign 0.75
+            with move
+
+            show callyon:
+                xalign 1.5
+            with move
+            show callyon at right
+            with move
+
+            show hiris:
+                xalign -0.5
+            with move
+            show hiris at left
+            with move
+
+            jump conseil_ambassade_nonExcuse_elf
