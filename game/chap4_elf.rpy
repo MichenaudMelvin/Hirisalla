@@ -12,9 +12,9 @@ label ambassadeExcuses_elf:
     with move
     ppElf "Je tiens à m’excuser pour les propos que j’ai tenu."
     ppSirene "Ne vous en faîtes pas, je vous pardonne."
-    jump conseil_ambassade_excuse
+    jump conseil_ambassade_excuse_elf
 
-label conseil_ambassade_excuse:
+label conseil_ambassade_excuse_elf:
     hide edalla
     show morgon:
         xalign 1.5
@@ -32,19 +32,18 @@ label conseil_ambassade_excuse:
     with move
     show hiris at left
     with move
-
     roiSirene "Nous sommes réunis aujourd'hui dans l’objectif de consolider une paix durable."
     reineElf "Tout à fait mon cher ami, nous sommes ici pour souhaiter l’union entre nos enfants respectifs."
     jump choix_mariage_goodEnding
 
-label choix_mariage_goodEnding:
+label choix_mariage_goodEnding_elf:
     menu:
         "Déclarer sa flamme à Edalla":
-            jump fin_joyeuse
+            jump fin_joyeuse_elf
         "Accepter le mariage avec le Metilay":
             jump finMariageArrange_elf
 
-label fin_joyeuse:
+label fin_joyeuse_elf:
     show callyon:
         xalign 1.5
     with move
@@ -64,7 +63,7 @@ label fin_joyeuse:
     pause 360
     return
 
-label conseil_ambassade_nonExcuse:
+label conseil_ambassade_nonExcuse_elf:
     n "Les deux familles royales se réunissent dans l’ambassade et commence alors une discussion des plus importantes."
     roiSirene "Princesse des Tyrriens, fille de Callyon, j’ai ouï-dire ton désaccord envers cette union qui a pour but, je vous le rappelle, d’unir nos deux familles."
     jump ambassadeNonExcuses_elf
@@ -89,7 +88,6 @@ label finGuerre_elf:
     scene credits
     play music "audio/drama_2.mp3" fadeout 2.0
     pause 360
-
     return
 
 label excuse_elf:
@@ -98,16 +96,16 @@ label excuse_elf:
     ppElf "J'étais encore un peu sous le choc d'apprendre une chose si importante sans avoir été concertée."
     ppElf "Je peux alors vous dire qu'il n'y a pas de problème concernant l'union de nos deux familles par un mariage."
     roiSirene "Qu'entendez-vous par un mariage ?"
-    jump choix_mariage_badEnding
+    jump choix_mariage_badEnding_elf
 
-label choix_mariage_badEnding:
+label choix_mariage_badEnding_elf:
     menu:
         "Déclarer sa flamme à Edalla":
-            jump fin_triste
+            jump fin_triste_elf
         "Accepter le mariage avec le Metilay":
             jump MariageArrange_elf
 
-label fin_triste:
+label fin_triste_elf:
     roiSirene "Si cela convient à ma fille, je n’y vois pas d’inconvénient."
     ppSirene "Je refuse mais j’accepte de lui donner mon amitié pour un monde de paix qui grandira dans la tranquillité et la sérénité."
 
@@ -128,9 +126,9 @@ label MariageArrange_elf:
     reineElf "Tout à fait mon cher ami, nous sommes ici pour souhaiter l’union entre enfants respectifs."
     pause 1
     princeSirene "Dame Hiris, acceptez-vous de me prendre pour époux ?"
-    jump choix_mariage_edallaContre
+    jump choix_mariage_edallaContre_elf
 
-label choix_mariage_edallaContre:
+label choix_mariage_edallaContre_elf:
     menu:
         "Déclarer sa flamme à Edalla":
             ppElf "Veuillez pardonner mon insolence mais je souhaiterais demander la main de la princesse Edalla."
@@ -149,5 +147,3 @@ label finMariageArrange_elf:
     pause 360
 
     return
-
-    

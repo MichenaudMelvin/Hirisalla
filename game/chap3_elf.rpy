@@ -177,13 +177,13 @@ label dialogueSurPrinces_elf:
 
     menu :
         "Monter à l'arbre pour mieux voir":
-            jump mauvais_choix
+            jump mauvais_choix_elf
         "Se pencher derrière le buisson":
-            jump mauvais_choix  
+            jump mauvais_choix_elf
         "Ne rien faire":
-            jump bon_choix
+            jump bon_choix_elf
 
-label bon_choix:
+label bon_choix_elf:
     pause 1
     n "Vous patientez quelques secondes et décider de ne plus vous cacher."      
     pause 1
@@ -210,7 +210,7 @@ label bon_choix:
     with move
     jump ambassadeExcuses_elf
     
-label mauvais_choix:
+label mauvais_choix_elf:
     stop music fadeout 1.0
     pause 1
     n "Vous perdez l'équilibre pendant l'observation."
@@ -240,7 +240,7 @@ label mauvais_choix:
     stop music fadeout 2.0
     scene bg ambassadeSirene
     with fade
-    jump conseil_ambassade_excuse
+    jump conseil_ambassade_excuse_elf
 
 label excusesPrincesse_elf:
     scene bg elf
@@ -272,7 +272,7 @@ label excusesPrincesse_elf:
         "Présenter ses excuses":
             jump ambassadeExcuses_elf
         "Ignorer":
-            scene bg ambassadesirene
+            scene bg ambassadesirene_elf
             with fade
 
             show morgon:
@@ -294,4 +294,4 @@ label excusesPrincesse_elf:
             show hiris at left
             with move
 
-            jump conseil_ambassade_nonExcuse
+            jump conseil_ambassade_nonExcuse_elf

@@ -52,9 +52,9 @@ define gui.text_color = u'#ffffff'
 define gui.interface_text_color = u'#ffffff'
 
 
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "/images/fonts/ChakraPetch-Regular.ttf"
 
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "/images/fonts/MedievalSharp-Regular.ttf"
 
 define gui.interface_text_font = "DejaVuSans.ttf"
 
@@ -74,7 +74,7 @@ define gui.label_text_size = 36
 define gui.notify_text_size = 24
 
 ## The size of the game's title.
-define gui.title_text_size = 75
+define gui.title_text_size = 0
 
 
 ## Main and Game Menus #########################################################

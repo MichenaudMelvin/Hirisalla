@@ -76,7 +76,7 @@ label suspicion:
     ppElf "Gare à toi si tu m'as menti, tu vas le regretter."
     jump rencontre_famille_prevu
 
-label rencontre_famille_prevu:
+label rencontre_famille_prevu_elf:
     stop music fadeout 2.0
     play music "audio/theme_elfe.mp3" fadeout 2.0
     scene ambassade
@@ -111,7 +111,7 @@ label resignation:
     reineElf "Non aucun, je suis désolée de devoir te forcer."
     jump tableau_prince
 
-label rencontre_famille_avance:
+label rencontre_famille_avance_elf:
     stop music fadeout 2.0
     play music "audio/theme_elfe.mp3" fadeout 2.0
     scene ambassade 
@@ -126,13 +126,13 @@ label rencontre_famille_avance:
     with move
     reineElf "Tu es déjà là ma fille ?"
     reineElf "Que me vaut ta visite si précipitée ?"
-    menu : 
+    menu:
         "Lui dire ce que vous savez":
             jump description_mariage
         "Lui dire subtilement que vous êtes au courant":
             jump description_mariage
 
-label description_mariage:           
+label description_mariage_elf:
     ppElf "Je sais ce que vous avez prévu de faire de moi !"
     reineElf "On a pas le choix ma chérie, c'est pour sauver notre royaume."
     reineElf "Tu dois te marier pour tous nous sauver !"
@@ -152,6 +152,6 @@ label contradiction:
     ppElf "Je ne pourrais jamais accepter cela."
     jump discution_centaure
 
-label accord:
+label accord_elf:
     ppElf "Si c'est la seule solution, on va dire que cela aurait pu être pire."
-    jump discution_reine
+    jump discution_reine_elf
