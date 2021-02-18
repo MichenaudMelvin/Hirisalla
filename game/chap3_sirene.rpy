@@ -1,5 +1,4 @@
 label rencontrePrincesse_sirene:
-    #Notify("Chapitre 3")
     scene bg ambassadeElf
     with fade
 
@@ -14,69 +13,95 @@ label rencontrePrincesse_sirene:
     show Hiris at left
     with move
 
-    ppElf "Saluuut"
-    ppElf "jme présente je suis une sirene"
-    ppElf "blabla"
-    ppSirene "ok"
-    ppElf "c quoi ton avis sur ce mariage"
+    ppElf "Je me présente Hiris, fille de Callyon, c'est un honneur pour moi de pouvoir vous inviter sous mon toit."
+    ppElf "Enchanté Princesse Hiris."
     menu:
-        "On va en ville ?":
-            ppSirene "On va en ville ?"
+        "Peut-on en parler ailleurs ?":
+            ppSirene "Je me sens à l'étroit ici, c'est possible de poursuivre dans un endroit moins confiné ?"
             jump discutionVille_sirene
-        "On parle politique ?":
-            ppSirene "On parle politique ?"
+        "Je suis prête à ma marrier":
+            ppSirene "Je suis prête à me marrier avec ton frère."
             jump discutionPolitique_sirene
-        "On parle de notre vie ?":
-            ppSirene "On parle de notre vie ?"
+        "Je suis prête à faire le bon choix pour mon peuple":
+            ppSirene "Si c'est le seul moyen d'avoir la paix entre nos peuples, alors je me marierai avec ton frère."
             jump vieDePrincesse_sirene
 
 label discutionVille_sirene:
+    $ dragueReussi = True
+    ppElf "Bien-sur, moi aussi je suis fatigué de rester entre ces murs, allons en ville"
     scene bg villeElf
     with fade
-    ppElf "ah oausi nik les vilageois"
-    ppSirene "ouais carrement"
-    menu:
-        "On stalk les princes ?":
-            jump dialogueSurPrinces_sirene
-        "Mon amie amma peut observer les princes":
-            jump qteTortue_sirene
+    show Edalla:
+        xalign 1.5
+    with move
+    show Hiris:
+        xalign -0.5
+    with move
+    show Edalla at right
+    with move
+    show Hiris at left
+    with move
+    ppSirene "C'est vraiment magnifique ici, j'adore les couleurs et l'air est si pur…"
+    ppElf "Contente de voir que cela vous plait princesse, vous avez faim ? Je connais une excellente auberge non loin d’ici."
+    ppSirene "J'accepte votre proposition avec plaisir princesse Hiris."
+    n "Hiris souris et prends votre main droite pour se rendre devants un établissement discret au premier abord mais une fois à l’intérieur vous récente une ambiance chaleureuse et réconfortante."
+    ppSirene "Quel joli endroit, la musique est joyeuse, la présentation magnifique et l’odeur tout simplement exquise."
+    ppElf "Bienvenue chez les Trois Centaures, aller venez, j'ai ma table habituelle juste ici."
+    n "Une fois installé, vous commandez un plat typique."
+    ppSirene "Cette auberge semble vous tenir à cœur Hiris."
+    ppElf "Je viens ici depuis toute jeune, j'ai vécus d’innombrable souvenirs ici avec ma famille ou mes proches."
+    ppElf "Je trouve que nous partageons beaucoup de points en commun ma chère."
+    ppSirene "C'est plutôt bon signe pour les générations futures."
+    n "Le serveur pose les plats sur la table, vous découvrez votre salade aux herbes curative, vous la dégustez avec beaucoup de gourmandise."
+    ppElf "Allons nous balader, je connais des paysages magnifique ici."
+    ppSirene "Je vous suis Hiris, ou que vous aillez."
+    n "Vous partez dans un champ juste toutes les deux, le coucher du soleil se pose doucement dans la vallée laissant les nuages blancs devenir rosâtre." 
+    n "Vous regardez Hiris dans les yeux en souriant sans rien dire."
+    jump discution_sirene  
 
 label discutionPolitique_sirene:
-    ppElf "on parle de truc politiques"
-    ppSirene "ah ouais trop relou l'armé"
-    menu:
-        "On continue à parler en ville ?":
-            ppSirene "On continue à parler en ville ?"
-            jump discutionVille_sirene
-        "Sortir de la pièce":
-            ppSirene "ok je sui pas d'accord avec toa"
-            ppElf "ah bah si c'est comme ça"
-            ppElf "tu hors de ma vue"
-            #faire une transition
-            jump excusesPrincesse_sirene
-
-label vieDePrincesse_sirene:
-    $ qteDragueReussi = True
-    ppElf "ouais je sais pas de quoi on peut parler"
-    ppSirene "bah ferme ta gueule"
+    ppElf "Je vous trouve bien solennelle, essaye d’être un peu plus naturelle."
+    ppSirene "Je vais essayer de faire de mon mieux."
+    ppElf "Vous êtes trop gentille Edalla."
+    ppSirene "Vous aussi, tout le monde me dit ça…"
+    ppElf "Personnellement je ne comprends pas comment vous pouvez accepter si facilement de prendre la décision de rester avec quelqu’un que vous ne connaissez pas."
+    ppSirene "Les coraux sont rouges depuis des siècles, ces conflits méritent d'être finis une bonne fois pour toute."
+    ppElf "Ce n’est pas à vous de payez des conséquences du passées."
+    ppSirene "Non, mais j’assume les choix de mes ancêtres et je pense que vous devrez en faire de même Princesse."
+    #play sound "audio/claque.mp3"
+    ppElf "A qui croyez vous parler, sirène je suis la fille de la reine."
+    ppElf "Callyon, mon honneur et ma famille sont aussi importants que mon peuple." 
+    ppElf "Nous subissons également des lourdes pertes, la nature ne pousse même plus sur certaines zones de batailles."
+    ppSirene "…"
     scene bg ambassadeElf
     with fade
-    jump discution_sirene
+    jump excusesPrincesse_sirene
 
-label qteTortue_sirene:
-    $ qteObservationReussi = True
-    ppSirene "cimer Amma, ta bien stalk les princes"
-    jump discution_sirene
-
-
-label dialogueSurPrinces_sirene:
-    ppSirene "ouais nik les princes"
-    ppElf "ouais carrement"
+label vieDePrincesse_sirene:
+    ppElf "Je vous envie ma chère Edalla, vous avez un sens du patriotisme limite maladive."
+    ppSirene "Ne vous moquez pas de moi vous aurais fait pareille à ma place."
+    ppElf "Je ne sais, pas j’aurais sûrement décider de dicter ce que me dit mon cœur."
+    ppSirene "Je ne me mens pas à moi-même, Hiris."
+    n "Edalla prenait doucement la main d'Hiris."
+    ppSirene "Je vis pour moi et pour les miens chaque minute et chaque seconde."
+    ppElf "Vous êtes bien tactile pour une fiancée."
+    ppSirene "Excusez-moi, toucher les gens me permet de me calmer tu fais quoi pour te détendre."
+    ppElf "Pour me détendre ? Eh bien, je prends un bain, je lis des romans couchés sur les arbres caressés par le vent ou j’écoute les chants dans les prairies vertes de Tyrria."
+    ppSirene "Très bien dans ce cas laissez-moi vous offrir un cadeau."
+    #chant de sièrne
+    #play music "audio/chant_sirene.mp3" fadeout 1.0
+    pause 8
+    ppSirene "C'était merveilleux, j’apprécie énormément ce présent, je suis heureuse de vous avoir rencontré Edalla."
+    #stop music fadeout 3.0
+    ppElf "C’est le meilleur des compliments, princesse."
+    ppSirene "Bien, je pense que nous devons retourer à l'ambassade."
     scene bg ambassadeElf
     with fade
     jump discution_sirene
 
 label excusesPrincesse_sirene:
-    roiSirene "Tu t'excuse ?"
-    ppSirene "Oui..."
+    reineElf "Edalla, allez-vous vous excusez pour vos propos."
+    ppSirene "Oui… Désolé…"
+    ppSirene "Je regrette vraiment ce que j'ai pu dire à Hiris"
+    reineElf "Bien, passons au sujet du mariage."
     jump discution_sirene
