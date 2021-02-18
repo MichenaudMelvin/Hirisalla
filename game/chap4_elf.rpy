@@ -1,31 +1,45 @@
 label ambassadeExcuses_elf:
-    scene bg ambassadeSirene
+    stop music fadeout 2.0
+    play music "audio/ambassade.mp3" fadeout 2.0
+    scene chambre_sirene
+    with fade
     show hiris:
         xalign -0.5
     with move
     show hiris at left
     with move
-    show edalla:
+    show edalla_normal:
         xalign 1.5
     with move
-    show edalla at right
+    show edalla_normal at right
     with move
     ppElf "Je tiens à m’excuser pour les propos que j’ai tenu."
     ppSirene "Ne vous en faîtes pas, je vous pardonne."
     jump conseil_ambassade_excuse_elf
 
+<<<<<<< Updated upstream
 label conseil_ambassade_excuse_elf:
     hide edalla
     show morgon:
+=======
+label conseil_ambassade_excuse:
+    stop music fadeout 2.0
+    play music "audio/ambassade.mp3" fadeout 2.0
+    show edalla_normal:
+>>>>>>> Stashed changes
         xalign 1.5
     with move
-    show morgon:
+    hide edalla_normal
+    show morgon_normal:
+        xalign 1.5
+    with move
+    show morgon_normal:
         xalign 0.75
     with move
-    show callyon:
+    show callyon_normal:
         xalign 1.5
     with move
-    show callyon at right
+    show callyon_normal at right
     with move
     show hiris:
         xalign -0.5
@@ -43,27 +57,52 @@ label choix_mariage_goodEnding_elf:
         "Accepter le mariage avec le Metilay":
             jump finMariageArrange_elf
 
+<<<<<<< Updated upstream
 label fin_joyeuse_elf:
     show callyon:
         xalign 1.5
+=======
+label fin_joyeuse:
+    show callyon_normal:
+        xalign 0.75
+>>>>>>> Stashed changes
     with move
-    hide callyon
-    show edalla:
+    show edalla_normal:
         xalign 1.5
     with move
-    show edalla at right
+    show edalla_normal at right
     with move
     ppElf "Veuillez pardonner mon insolence mais je souhaiterais demander la main de la princesse Edalla."
+    show callyon_surprise
+    hide callyon_normal
+    show edalla_surprise at right
+    hide edalla_normal
     roiSirene "Si cela convient à ma fille, je n’y vois pas d’inconvénient."
+    show edalla_normal at right
+    hide edalla_surprise
+    show edalla_joie at right
+    hide edalla_normal
     ppSirene "J’accepte d'épouser la princesse Hiris."
-    n "Et ils vécurent heureux et eurent beaucoup d’enfants."
+    show hiris_happy at left
+    hide hiris
 
     scene credits
+    with fade
+    stop music fadeout 2.0
     play music "audio/romantique.mp3" fadeout 2.0
+    n "La princesse Edalla accepta la demande de la princesse Hiris."
+    n "La vie des deux princesses est remplie de joie et leur amour fît en sorte que le bien des deux cités ne soit jamais remis en cause à nouveau."
+    window hide
     pause 360
     return
 
+<<<<<<< Updated upstream
 label conseil_ambassade_nonExcuse_elf:
+=======
+label conseil_ambassade_nonExcuse:
+    stop music fadeout 2.0
+    play music "audio/ambassade.mp3" fadeout 2.0
+>>>>>>> Stashed changes
     n "Les deux familles royales se réunissent dans l’ambassade et commence alors une discussion des plus importantes."
     roiSirene "Princesse des Tyrriens, fille de Callyon, j’ai ouï-dire ton désaccord envers cette union qui a pour but, je vous le rappelle, d’unir nos deux familles."
     jump ambassadeNonExcuses_elf
@@ -83,11 +122,18 @@ label finGuerre_elf:
     roiSirene "Veuillez quitter la ville."
     reineElf "Tu déshonores la famille, tu me déçois."
 
-    n "Le peuple d'Océanos rompue la trêve et démarra les hostilités envers Tyrria le lendemain à l'aube."
-
     scene credits
+    with fade
+    stop music fadeout 2.0
     play music "audio/drama_2.mp3" fadeout 2.0
+    n "Le peuple d'Océanos rompue la trêve et démarra les hostilités envers Tyrria le lendemain à l'aube."
+    n "La guerre ne s'arrêtera sans doute jamais et sera encore plus meurtrière qu'elle ne l'a jamais été."
+    window hide
     pause 360
+<<<<<<< Updated upstream
+=======
+    
+>>>>>>> Stashed changes
     return
 
 label excuse_elf:
@@ -105,19 +151,26 @@ label choix_mariage_badEnding_elf:
         "Accepter le mariage avec le Metilay":
             jump MariageArrange_elf
 
+<<<<<<< Updated upstream
 label fin_triste_elf:
+=======
+label fin_triste:
+    ppElf "Je souhaiterais prendre pour épouse votre fille, Edalla."
+>>>>>>> Stashed changes
     roiSirene "Si cela convient à ma fille, je n’y vois pas d’inconvénient."
-    ppSirene "Je refuse mais j’accepte de lui donner mon amitié pour un monde de paix qui grandira dans la tranquillité et la sérénité."
+    ppSirene "Je ne peux pas accepter cela en si peu de temps... J’accepte toutefois de lui donner mon amitié pour un monde de paix qui grandira dans la tranquillité et la sérénité."
 
+    scene credits
+    with fade
+    stop music fadeout 2.0
+    play music "audio/drama_2.mp3" fadeout 2.0
     n "Edalla est en visite de courtoisie sur le territoire elfique pour retrouver sa nouvelle amie Hiris."
     n "Afin de lui rendre la pareille, elle lui fait visiter la ville à son tour."
-    n "Cependant, un civil n’ayant pas pu pardonner aux peuple d’Océanos pour les morts qu’ils leurs ont apporté, aperçu la princesse sirène aux côtés de Hiris."
+    n "Cependant, un civil, n’ayant pas pu pardonner aux peuple d’Océanos pour les morts qu’ils leurs ont apportés, aperçu la princesse sirène aux côtés de Hiris."
     n "Il bandit alors son arc et tira une flèche en plein cœur d’Edalla et c’est alors qu’elle mourut dans les bras de son amie en pleure."
 
     n "En apprenant la nouvelle, le peuple d'Océanos annula le traité de paix et démarra les hostilités envers Tyrria."
-
-    scene credits
-    play music "audio/drama_2.mp3" fadeout 2.0
+    window hide
     pause 360
     return
 
@@ -137,13 +190,31 @@ label choix_mariage_edallaContre_elf:
             jump finMariageArrange_elf
 
 label finMariageArrange_elf:
-    ppElf "Oui, je le veux."
-    roiSirene "Je vous déclare mari et femme"
+    show callyon_normal:
+        xalign 1.5
+    with move
+    hide callyon_normal
 
-    n "Ils vécurent plus ou moins heureux et eurent des enfants."
+    show metilay_heureux:
+        xalign 1.5
+    with move
+    show metilay_heureux at right
+    with move
+    ppElf "J'accepte avec plaisir ce que nous avions prévu."
+    roiSirene "J'entend bien."
+    roiSirene "Metilay, fils du roi d'Océanos et Prince de la cité du même nom, souhaitez-vous prendre pour épouse Hiris, fille de la Reine de Tyrria et princesse de la cité du même nom ?"
+    princeSirene "Oui, je le veux."
+    roiSirene "Hiris, fille de la Reine de Tyrria et princesse de la cité du même nom, souhaitez-vous prendre pour épouse Hiris, fils du roi d'Océanos et Prince de la cité du même nom ?"
+    ppElf "Oui, je le veux."
 
     scene credits
+    with fade
+    stop music fadeout 2.0
     play music "audio/drama_1.mp3" fadeout 2.0
+    n "La princesse de Tyrria accepta la demande de Metilay, prince d'Océanos."
+    n "Leur vie est belle et le restera grâce à la paix se trouvant entre les deux cités."
+    n "La princesse ne le montre pas, mais elle regrette de ne pas avoir déclarée sa flamme à la princesse Edalla lorsqu'elle en avait l'occasion."
+    window hide
     pause 360
 
     return

@@ -1,10 +1,15 @@
+<<<<<<< Updated upstream
 label discution_centaure_elf:
     scene bg elf
+=======
+label discution_centaure: 
+    scene ville_elfe
+>>>>>>> Stashed changes
     with fade
-    show hiris:
+    show hiris_angry:
         xalign -0.5
     with move
-    show hiris at left
+    show hiris_angry at left
     with move
     show centaure:
         xalign 1.5
@@ -28,16 +33,21 @@ label discution_centaure_elf:
 
 label discution_reine_elf:
     stop sound
-    scene ambassade
+    scene ambassade_elfe
     with fade
     show Hiris:
         xalign -0.5
     with move
+<<<<<<< Updated upstream
     show Hiris at left
     show callyon:
+=======
+    show hiris at left
+    show callyon_normal:
+>>>>>>> Stashed changes
         xalign 1.5
     with move
-    show callyon at right
+    show callyon_normal at right
     with move
     ppElf "J'y ai réfléchis ma Reine."
     reineElf "Je vous écoute."
@@ -58,29 +68,37 @@ label info_rdv_centaure:
     centaure "Ne t'en fais pas, d'après les dires, nous n'aurons pas besoin d'aller sous l'eau."
     jump plage_elf
 
+<<<<<<< Updated upstream
 label plage_elf:
     scene bg plage
     show Hiris at left
+=======
+label plage:
+    scene ville_sirene
+    show hiris at left
+>>>>>>> Stashed changes
     with fade
     show Hiris at left
     ppElf "{i} Il semblerait que je sois arrivée au point de rendez-vous. {/i}"
+    show hiris_surprise at left
+    hide hiris
     ppElf "{i} Woaw, voilà à quoi ressemble la cité des Sirènes. {/i}"
     n "Vous vous dirigez vers la cité des Sirènes à l'aide du convoi royal."
     play music "audio/theme_sirene.mp3" fadeout 2.0
-    scene bg ambassadesirene
+    scene ambassade_sirene
     show hiris at left
     with fade  
-    pause 3
-    show roiSirene:
+    pause 2
+    show metilay_normal:
         xalign 1.5
     with move
-    show princeSirene:
-        xalign 1.5
-    with move
-    show roiSirene at right
-    with move
-    show princeSirene:
+    show metilay_normal:
         xalign 0.85
+    with move
+    show morgon_normal:
+        xalign 1.5
+    with move
+    show morgon_normal at right
     with move
 
     menu:
