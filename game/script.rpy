@@ -6,10 +6,10 @@ define princeSirene = Character("Metilay", what_outlines=[(1, "#000000")]) #Homm
 
 define ppElf = Character(_("Hiris"), color="#32b614", what_outlines=[(1, "#000000")]) #Femme
 define reineElf = Character("Callyon", what_outlines=[(1, "#000000")]) #Femme
-define princeElf = Character("Keidal") #Homme
+define princeElf = Character("Keidal", what_outlines=[(1, "#000000")]) #Homme
 
 define centaure = Character(_("Garkiel"), color="#eec5a9", what_outlines=[(1, "#000000")]) #Centaure
-define tortue = Character ("Amma", what_outlines=[(1, "#000000")]) #Tortue
+define tortue = Character ("Amma", color="#7d9062", what_outlines=[(1, "#000000")]) #Tortue
 
 label start:
     stop music fadeout 5.0

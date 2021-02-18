@@ -56,7 +56,7 @@ define gui.text_font = "/images/fonts/ChakraPetch-Regular.ttf"
 
 define gui.name_text_font = "/images/fonts/MedievalSharp-Regular.ttf"
 
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "/images/fonts/ChakraPetch-Regular.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 33
@@ -81,7 +81,7 @@ define gui.title_text_size = 0
 
 ## The images used for the main and game menus.
 define gui.main_menu_background = "gui/main_menu.png"
-define gui.game_menu_background = "gui/game_menu.png"
+define gui.game_menu_background = "gui/main_menu.png"
 
 
 define gui.textbox_height = 278
