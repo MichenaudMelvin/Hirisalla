@@ -1,4 +1,5 @@
 label ambassadeExcuses_elf:
+    $ excuseHiris = True
     stop music fadeout 2.0
     play music "audio/ambassade.mp3" fadeout 2.0
     scene chambre_sirene
@@ -35,11 +36,12 @@ label conseil_ambassade_excuse_elf:
     with move
     show callyon_normal at right
     with move
-    show hiris:
-        xalign -0.5
-    with move
-    show hiris at left
-    with move
+    if (excuseHiris == False):
+        show hiris:
+            xalign -0.5
+        with move
+        show hiris at left
+        with move
     roiSirene "Nous sommes réunis aujourd'hui dans l’objectif de consolider une paix durable."
     reineElf "Tout à fait mon cher ami, nous sommes ici pour souhaiter l’union entre nos enfants respectifs."
     jump choix_mariage_goodEnding_elf
@@ -107,14 +109,12 @@ label finGuerre_elf:
     roiSirene "Je vois. Dans ce cas la trêve sera rompue demain à l’aube."
     roiSirene "Veuillez quitter la ville."
     reineElf "Tu déshonores la famille, tu me déçois."
-
+    n "Le peuple d'Océanos rompue la trêve et démarra les hostilités envers Tyrria le lendemain à l'aube."
+    n "La guerre ne s'arrêtera sans doute jamais et sera encore plus meurtrière qu'elle ne l'a jamais été."
     scene credits
     with fade
     stop music fadeout 2.0
     play music "audio/drama_2.mp3" fadeout 2.0
-    n "Le peuple d'Océanos rompue la trêve et démarra les hostilités envers Tyrria le lendemain à l'aube."
-    n "La guerre ne s'arrêtera sans doute jamais et sera encore plus meurtrière qu'elle ne l'a jamais été."
-    window hide
     pause 360
     return
 
@@ -137,18 +137,16 @@ label fin_triste_elf:
     ppElf "Je souhaiterais prendre pour épouse votre fille, Edalla."
     roiSirene "Si cela convient à ma fille, je n’y vois pas d’inconvénient."
     ppSirene "Je ne peux pas accepter cela en si peu de temps... J’accepte toutefois de lui donner mon amitié pour un monde de paix qui grandira dans la tranquillité et la sérénité."
-
-    scene credits
-    with fade
-    stop music fadeout 2.0
-    play music "audio/drama_2.mp3" fadeout 2.0
     n "Edalla est en visite de courtoisie sur le territoire elfique pour retrouver sa nouvelle amie Hiris."
     n "Afin de lui rendre la pareille, elle lui fait visiter la ville à son tour."
     n "Cependant, un civil, n’ayant pas pu pardonner aux peuple d’Océanos pour les morts qu’ils leurs ont apportés, aperçu la princesse sirène aux côtés de Hiris."
     n "Il bandit alors son arc et tira une flèche en plein cœur d’Edalla et c’est alors qu’elle mourut dans les bras de son amie en pleure."
 
     n "En apprenant la nouvelle, le peuple d'Océanos annula le traité de paix et démarra les hostilités envers Tyrria."
-    window hide
+    scene credits
+    with fade
+    stop music fadeout 2.0
+    play music "audio/drama_2.mp3" fadeout 2.0
     pause 360
     return
 
@@ -193,7 +191,6 @@ label finMariageArrange_elf:
     with fade
     stop music fadeout 2.0
     play music "audio/drama_1.mp3" fadeout 2.0
-    window hide
     pause 360
 
     return

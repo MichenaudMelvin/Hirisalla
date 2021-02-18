@@ -21,11 +21,12 @@ label choix_elf:
 
     menu:
         "Lui poser une question à propos du rendez-vous":
-            jump interrogatif
-        "Lui faire confiance":
-            jump confiance
+            jump interrogatif_elf
 
-label interrogatif:
+        "Lui faire confiance":
+            jump confiance_elf
+
+label interrogatif_elf:
     ppElf "Vu ton visage, tu ne me cacherais pas quelque chose ?"
     centaure "Mais non, ne t'en fais pas, fais moi confiance."
 
@@ -41,10 +42,16 @@ label confiance_elf:
     ppElf "Très bien, merci Garkiel."
     ppElf "Dans ce cas, je vais y aller."
     centaure "Super, bon courage, à demain !"
+    n "Vous vous dirigez vers votre maison à l'heure demandée."
+    show hiris:
+        xalign -0.5
+    with move
     play sound "audio/depart_centaure.mp3"
+    show centaure:
+        xalign 1.5
+    with move
     pause 3
     stop sound
-    n "Vous vous dirigez vers votre maison à l'heure demandée."
     jump rencontre_famille_prevu_elf
 
 label colere_elf:
@@ -74,6 +81,15 @@ label suspicion_elf:
     ppElf "C'est vrai ? Tu agis vraiment bizarrement."
     centaure "Oui, c'est vrai, ne t'inquiète pas."
     ppElf "Gare à toi si tu m'as menti, tu vas le regretter."
+    show hiris:
+        xalign -0.5
+    with move
+    play sound "audio/depart_centaure.mp3"
+    show centaure:
+        xalign 1.5
+    with move
+    pause 3
+    stop sound
     jump rencontre_famille_prevu_elf
 
 label rencontre_famille_prevu_elf:
@@ -102,6 +118,9 @@ label rencontre_famille_prevu_elf:
             jump resignation_elf
 
 label desaccord_elf:
+    $ desaccordHiris = True
+    show hiris_angry at left
+    hide hiris
     ppElf "C'est en aucun cas ce dont j'ai envie Mère !"
     show callyon_colere at right
     hide callyon_normal
@@ -109,6 +128,7 @@ label desaccord_elf:
     jump tableau_prince_elf
 
 label resignation_elf:
+    $ desaccordHiris = False
     ppElf "Et il n'y a vraiment aucun autre moyen d'établir la paix ?"
     reineElf "Non aucun, je suis désolée de devoir te forcer."
     jump tableau_prince_elf
@@ -141,19 +161,35 @@ label description_mariage_elf:
 
 label tableau_prince_elf:
     menu : 
-        reineElf "Regarde le tableau !"
+        reineElf "Regarde le tableau du prince !"
         "Critiquer":
             jump contradiction_elf
         "Complimenter subtilement":
-            jump accord_elf
+            if (desaccordHiris == True):
+                show hiris at left
+                hide hiris_angry
+                show callyon_normal at right
+                hide callyon_colere
+                jump accord_elf
+            else:
+                jump accord_elf
 
 label contradiction_elf:   
     show hiris_angry at left        
     hide hiris
     ppElf "Mais je m'en fiche, il a des écailles, des oreilles en forme de nageoire, c'est affreux !"
     ppElf "Je ne pourrais jamais accepter cela."
+    show hiris_angry:
+        xalign -0.5
+    with move
     jump discution_centaure_elf
 
 label accord_elf:
     ppElf "Si c'est la seule solution, on va dire que cela aurait pu être pire."
+    show hiris:
+        xalign -0.5
+    with move
+    show callyon_normal:
+        xalign 1.5
+    with move
     jump discution_reine_elf

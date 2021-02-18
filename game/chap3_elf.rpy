@@ -27,13 +27,13 @@ label rencontrePrincesse_elf:
     menu:
         ppSirene "Comme vous préférez, nous pouvons aller nous balader en ville ou rester dans la chambre pour parler plus tranquillement."
         "Aller en ville":
+            ppElf "Je ne serais pas contre d'aller me balader à vos côtés en ville !"
+            n "Vous décidez d'aller vous balader en ville."
             jump discutionVille_elf
         "Rester dans la chambre":
             jump discutionChambre_elf
 
 label discutionVille_elf:
-    n "Vous décidez d'aller vous balader en ville."
-    ppElf "Je ne serais pas contre d'aller me balader à vos côtés en ville !"
     show edalla_normal:
         xalign 1.5
     with move
@@ -144,18 +144,19 @@ label discutionChambre_elf:
     menu:
         "Demander à aller en ville":
             ppElf "Est-ce que vous seriez intéressée pour sortir en ville et discuter toutes les deux ?"
+            n "Vous décidez d'aller vous balader en ville."
             jump discutionVille_elf
         "Maintenir son opinion":
             ppElf "Je ne suis quand même pas convaincue."
             ppSirene "Comment pouvez-vous être aussi égoïste alors que vous avez entre vos mains le destin de deux peuples et du futur de tous."
             ppElf "Je suis contre une union forcée, j'ai besoin de pouvoir effectuer mes propres choix."
-            show hiris_angry at right
+            show hiris_angry at left
             hide hiris
             ppSirene "La conversation n’a pas d’issue, je n'ai plus la force de parler avec quelqu’un qui refuse d’admettre les torts de son pays."
             ppSirene "Sortez s'il vous plaît."
             play sound "audio/porte.mp3"
             show hiris_angry:
-                xalign 1.5
+                xalign -0.5
             with move
             jump excusesPrincesse_elf
     
@@ -167,11 +168,12 @@ label vieDePrincesse_elf:
     ppElf "Parlez moi un peu de vous, quels sont vos centres d'intérêts ?"
     ppSirene "J’ai pour passion la chanson, vous aimeriez avoir une démonstration ?"
     ppElf "Avec plaisir !"
+    window hide
     play music "audio/chant_sirene.mp3" fadeout 1.0
     pause 1
     pause 1
     pause 1
-    show hiris_surprise at right
+    show hiris_surprise at left
     hide hiris
     pause 1
     pause 1
@@ -183,13 +185,18 @@ label vieDePrincesse_elf:
     pause 1
     pause 1
     stop music fadeout 3.0
+    window show
     ppElf "Vous chantez tellement bien !"
-    show hiris at right
+    show hiris at left
     hide hiris_surprise
+    show edalla_gene at right
+    hide edalla_normal
     ppSirene "Merci, vous me flattez."
+    show edalla_normal at right
+    hide edalla_gene
     ppSirene "Il faudrait qu'on y aille, votre devoir vous attends."
     show edalla_normal:
-        xalign -0.5
+        xalign 1.5
     with move
     hide edalla_normal
     show hiris:
@@ -198,7 +205,7 @@ label vieDePrincesse_elf:
     hide hiris
     scene ambassade_sirene
     with fade
-    jump conseil_ambassade_excuse
+    jump conseil_ambassade_excuse_elf
 
 label dialogueSurPrinces_elf:
     stop music fadeout 2.0
@@ -328,14 +335,23 @@ label excusesPrincesse_elf:
     with move
     show centaure at left
     with move
-    show hiris:
+    show hiris_angry:
         xalign 1.5
     with move
-    show hiris at right
+    show hiris_angry at right
     with move
 
     centaure "Princesse nous partons à nouveau pour les terres des hommes poissons, pour décider de votre avenir."
     ppElf "Je suis la seule qui décide de quel avenir prendre, pour mon peuple et pour moi, partons."
+    show hiris_angry:
+        xalign 1.5
+    with move
+    show centaure:
+        xalign -0.5
+    with move
+    play sound "audio/galop.ogg"
+    pause 3
+    stop sound
     stop music fadeout 2.0
     play music "audio/theme_sirene.mp3" fadeout 2.0
     scene ville_sirene
@@ -345,6 +361,7 @@ label excusesPrincesse_elf:
     with move
     show hiris at right
     with move
+    #here probleme cohérence
     menu:
         n "Une fois dans l'ambassade, vous croisez la princesse qui ne semble pas vous voir."
         "Présenter ses excuses":

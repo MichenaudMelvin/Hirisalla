@@ -16,12 +16,19 @@ label discution_centaure_elf:
     menu:    
         centaure "Serais-tu capable de te marier pour le bien de tous ?"
         "Se résigner":
-            play sound "audio/galop.ogg"
-            pause 3
+            show hiris_sad at left
+            hide hiris_angry
+            ppElf "Je pense que je n'ai pas d'autres choix."
+            centaure "Bien, alors bon courage pour ton mariage Hiris"
             show centaure:
                 xalign 1.5
             with move
-            hide centaure
+            play sound "audio/galop.ogg"
+            pause 3
+            stop sound
+            show hiris_sad:
+                xalign -0.5
+            with move
             jump discution_reine_elf
         "Refuser":
             jump info_rdv_centaure_elf
@@ -54,7 +61,7 @@ label discution_reine_elf:
     with move
     jump plage_elf
 
-label info_rdv_centaure:
+label info_rdv_centaure_elf:
     ppElf "Je ne peux pas accepter un tel destin, je refuse de me marier avec lui."
     centaure "Je suis de ton avis, mais ce sont les ordres de la reine, tu n'as pas le choix."
     centaure "Le rendez-vous aura lieu dans leur cité."
@@ -62,6 +69,15 @@ label info_rdv_centaure:
     centaure "Nous pourrons ensuite accéder à leur cité sous-marine."
     ppElf "Et comment sommes-nous supposés respirer sous l'eau ?"
     centaure "Ne t'en fais pas, d'après les dires, nous n'aurons pas besoin d'aller sous l'eau."
+    show centaure:
+        xalign 1.5
+    with move
+    play sound "audio/galop.ogg"
+    pause 3
+    stop sound
+    show hiris_angry:
+        xalign -0.5
+    with move
     jump plage_elf
 
 label plage_elf:
