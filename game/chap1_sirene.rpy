@@ -1,7 +1,7 @@
 label choix_sirene:
-    scene bg sirene
+    scene chambre_sirene
     with fade
-    show Edalla:
+    show edalla_normal:
         xalign -0.5
     with move
     show amma:
@@ -46,7 +46,8 @@ label confiance_sirene:
         xalign 1.5
     with move
 
-    scene bg ambassadeSirene
+    scene ambassade_sirene
+    with fade
     show Morgon:
         xalign 1.5
     with move
@@ -79,7 +80,7 @@ label confiance_sirene:
     jump discution_roi_sirene
 
 label rencontre_famille_prevu_sirene:
-    scene bg sirene
+    scene ambassade_sirene
     with fade
     show Edalla triste:
         xalign -0.5
@@ -114,7 +115,7 @@ label rencontre_famille_avance_sirene:
     hide Amma
     hide Edalla
 
-    scene bg ambassadeSirene
+    scene ambassade_sirene
     with fade
     show Edalla:
         xalign -0.5

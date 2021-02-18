@@ -1,5 +1,5 @@
 label discution_tortue_sirene:
-    scene bg ambassadeSirene
+    scene chambre_sirene
     with fade
     show Edalla:
         xalign -0.5
@@ -12,7 +12,7 @@ label discution_tortue_sirene:
     show amma at right
     with move
     #faire des bégaiement parce que je sais pas le faire
-    n "Edalla après s'être enfuite du château, allait se recuillir auprès d'Amma à propos de son mariage forcé avec le prince des Tyrriens."
+    n "Après s'être enfuite du château, Edalla allait se recuillir auprès d'Amma à propos de son mariage forcé avec le prince des Tyrriens."
     tortue "Et donc, tu accepterais de te sacrifier pour ta patrie ?"
     ppSirene "Oui…"
     ppSirene "Je ne pense pas vraiment avoir d'autres choix…"
@@ -26,10 +26,8 @@ label discution_roi_sirene:
     n "Le jour d'après, au château du peuple des Océanos, la princesse allait se recueillir auprès de son père avant son voyage vers le monde terrestre."
     jump info_rdv_roi_sirene
 
-# à replace --> refaire le dialogue avec amma
-
 label info_rdv_roi_sirene:
-    scene bg ambassadeSirene
+    scene ambassade_sirene
     with fade
     show Edalla:
         xalign -0.5
@@ -52,16 +50,17 @@ label info_rdv_roi_sirene:
         xalign -0.5
     with move
 
-    scene bg truc
+    scene chambre_sirene
+    with fade
     show Edalla:
         xalign -0.5
     with move
     show amma:
         xalign 1.5
     with move
-    show amma at right
-    with move
     show Edalla at left
+    with move
+    show amma at right
     with move
     menu:
         tortue "Edalla tu voudrais parler de ton mariage plus en détail ?"
@@ -86,7 +85,7 @@ label reflexion_sirene:
 
 label decouverteFamilleRoyale_sirene:
     #elipse de 1h
-    scene bg ambassadeElf
+    scene ville_sirene
     with fade
     pause 3
     show Edalla:
