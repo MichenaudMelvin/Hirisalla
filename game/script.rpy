@@ -1,18 +1,19 @@
-﻿define n = Character(_("Narrateur"), color="#FFFFFF", what_outlines=[(1, "#000000")]) #Narrateur
+﻿define n = Character(_("Narrateur"), color="#ffffff", what_outlines=[(1, "#000000")]) #Narrateur
 
 define ppSirene = Character(_("Edalla"), color="#fe432d", what_outlines=[(1, "#000000")]) #Femme
-define roiSirene = Character("Morgon", what_outlines=[(1, "#000000")]) #Homme
-define princeSirene = Character("Metilay", what_outlines=[(1, "#000000")]) #Homme
+define roiSirene = Character("Morgon", color="9bc6c2", what_outlines=[(1, "#000000")]) #Homme
+define princeSirene = Character("Metilay", color="bbe4e0", what_outlines=[(1, "#000000")]) #Homme
 
-define ppElf = Character(_("Hiris"), color="#32b614", what_outlines=[(1, "#000000")]) #Femme
-define reineElf = Character("Callyon", what_outlines=[(1, "#000000")]) #Femme
-define princeElf = Character("Keidal", what_outlines=[(1, "#000000")]) #Homme
+define ppElf = Character(_("Hiris"), color="#926d99", what_outlines=[(1, "#000000")]) #Femme
+define reineElf = Character("Callyon", color="#f3e106", what_outlines=[(1, "#000000")]) #Femme
+define princeElf = Character("Keidal", color="#925a12", what_outlines=[(1, "#000000")]) #Homme
 
 define centaure = Character(_("Garkiel"), color="#eec5a9", what_outlines=[(1, "#000000")]) #Centaure
 define tortue = Character ("Amma", color="#7d9062", what_outlines=[(1, "#000000")]) #Tortue
 
 label start:
     stop music fadeout 5.0
+    $ dispute = False
     $ dragueReussi = False
     scene fond_introduction
     n "Le monde est abandonné par la guerre faisant rage depuis des siècles entre deux camps, la Terre et la Mer, les elfes Tyrriens contre les sirènes d’Océanos."
