@@ -51,37 +51,38 @@ label info_rdv_roi_sirene:
     show Edalla:
         xalign -0.5
     with move
-    
 
-    ppSirene "ouais c relou"
-    tortue "ouais tu doit faire qoi ?"
+    scene bg truc
+    show Edalla:
+        xalign -0.5
+    with move
+    show amma:
+        xalign 1.5
+    with move
+    show amma at right
+    with move
+    show Edalla at left
+    with move
     menu:
-        ppSirene "ouai je doit bz le prince, c pa ouf"
-        "Lui demmander conseil (à armma)":
+        tortue "Edalla tu voudrais parler de ton mariage plus en détail ?"
+        "Parler du marriage":
+            ppSirene "Amma, puis-je te parler sérieusement ?"
             jump reflexion_sirene
         "Preferez se reposer":
+            ppSirene "Non, désolée Amma, je préfère me reposer un peu"
             jump decouverteFamilleRoyale_sirene
 
 label reflexion_sirene:
+    tortue "Bien sûr princesse"
+    ppSirene "Je doute encore sur mon mariage malgré le fait que je veux protéger mon peuple, je n'ai pas vraiment envie de vivre aux côtés d’une personne que je n’aime pas."
     menu:
-        ppSirene "hmm..."
-        "Réfléchir en tant que femme":
-            ppSirene "ouai je réfléchi mais je sias pas usr koi"
-            jump plage_sirene
-        "Réfléchir en tant que souveraine":
-            ppSirene "ouais trop relou d'etre une souveraine"
-            jump plage_sirene
-
-label plage_sirene:
-    scene bg plage
-    with fade
-    show Edalla at left
-    ppSirene "c la plage"
-    ppSirene "un coup de fil"
-    ppSirene "on est là"
-    ppSirene "stylé la ville des elf"
-    n "elipse de 2h"
-    jump decouverteFamilleRoyale_sirene
+        tortue "Que dit vôtre cœur princesse ?"
+        "Je pense que j'ai besoin de réfléchir encore":
+            ppSirene "Je ne suis pas tout à fait sûre de prendre ma décision."
+            jump decouverteFamilleRoyale_sirene
+        "Je pense être prête à ma marier":
+            ppSirene "Il est mieux pour mon peuple que je me marie."
+            jump decouverteFamilleRoyale_sirene
 
 label decouverteFamilleRoyale_sirene:
     #elipse de 1h
