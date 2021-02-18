@@ -31,13 +31,13 @@ label interrogatif:
 
     menu:
         "Lever le ton":
-            jump colere
+            jump colere_elf
         "Être suspicieux":
-            jump suspicion
+            jump suspicion_elf
         "Avoir confiance":
-            jump confiance
+            jump confiance_elf
 
-label confiance:
+label confiance_elf:
     ppElf "Très bien, merci Garkiel."
     ppElf "Dans ce cas, je vais y aller."
     centaure "Super, bon courage, à demain !"
@@ -45,36 +45,36 @@ label confiance:
     pause 3
     stop sound
     n "Vous vous dirigez vers votre maison à l'heure demandée."
-    jump rencontre_famille_prevu
+    jump rencontre_famille_prevu_elf
 
-label colere:
+label colere_elf:
     ppElf "Dis-moi, tu sais très bien que je déteste qu'on ne me dise pas clairement les choses."
     centaure "Je ne devais rien te dire, tu es toujours aussi têtue..."
     centaure "La reine a décidé de te marier avec le prince d'Océanos."
+    hide hiris
+    show hiris_angry at left
     ppElf "Tu te fous de moi j'espère."
     centaure "Il faut que j'y aille, désolé !"
-
-    play sound "audio/depart_centaure.mp3"
-    pause 3
-    n "Garkiel s'en va au galop."  
     show centaure:
         xalign 1.5
     with move
     hide centaure
+    play sound "audio/depart_centaure.mp3"
+    pause 3
+    n "Garkiel s'en va au galop."  
     stop sound
     n "Vous vous dirigez vers votre maison en furie."
-    show hiris:
+    show hiris_angry:
         xalign -0.5
     with move
-    hide hiris
-    jump rencontre_famille_avance
-    return
+    hide hiris_angry
+    jump rencontre_famille_avance_elf
 
-label suspicion:
+label suspicion_elf:
     ppElf "C'est vrai ? Tu agis vraiment bizarrement."
     centaure "Oui, c'est vrai, ne t'inquiète pas."
     ppElf "Gare à toi si tu m'as menti, tu vas le regretter."
-    jump rencontre_famille_prevu
+    jump rencontre_famille_prevu_elf
 
 label rencontre_famille_prevu_elf:
     stop music fadeout 2.0
@@ -97,49 +97,46 @@ label rencontre_famille_prevu_elf:
     reineElf "Tu seras la future femme du Prince d'Océanos."
     menu :
         "Être en désaccord":
-            jump desaccord
+            jump desaccord_elf
         "Se résigner":
-            jump resignation
+            jump resignation_elf
 
-label desaccord:
+label desaccord_elf:
     ppElf "C'est en aucun cas ce dont j'ai envie Mère !"
     show callyon_colere at right
     hide callyon_normal
-    hide callyon_normal
     reineElf "Tu n'as pas le choix, c'est la seule solution possible."
-    jump tableau_prince
+    jump tableau_prince_elf
 
-label resignation:
+label resignation_elf:
     ppElf "Et il n'y a vraiment aucun autre moyen d'établir la paix ?"
     reineElf "Non aucun, je suis désolée de devoir te forcer."
-    jump tableau_prince
+    jump tableau_prince_elf
 
 label rencontre_famille_avance_elf:
     stop music fadeout 2.0
     play music "audio/theme_elfe.mp3" fadeout 2.0
     scene ambassade_elfe 
     with fade
-    show hiris:
+    show hiris_angry:
         xalign -0.5
     with move
-    show hiris at left
+    show hiris_angry at left
     show callyon_normal:
         xalign 1.5
     show callyon_normal at right
     with move
     reineElf "Tu es déjà là ma fille ?"
     reineElf "Que me vaut ta visite si précipitée ?"
-    menu:
-        "Lui dire ce que vous savez":
-            jump description_mariage_elf
-        "Lui dire subtilement que vous êtes au courant":
-            jump description_mariage_elf
+    jump description_mariage_elf
 
 label description_mariage_elf:
     ppElf "Je sais ce que vous avez prévu de faire de moi !"
     reineElf "On a pas le choix ma chérie, c'est pour sauver notre royaume."
     reineElf "Tu dois te marier pour tous nous sauver !"
     reineElf "Et puis le prince est magnifique !"
+    hide hiris_angry
+    show hiris at left
     jump tableau_prince_elf
 
 label tableau_prince_elf:

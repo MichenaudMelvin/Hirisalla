@@ -42,7 +42,7 @@ label conseil_ambassade_excuse_elf:
     with move
     roiSirene "Nous sommes réunis aujourd'hui dans l’objectif de consolider une paix durable."
     reineElf "Tout à fait mon cher ami, nous sommes ici pour souhaiter l’union entre nos enfants respectifs."
-    jump choix_mariage_goodEnding
+    jump choix_mariage_goodEnding_elf
 
 label choix_mariage_goodEnding_elf:
     menu:
@@ -61,8 +61,10 @@ label fin_joyeuse_elf:
     show edalla_normal at right
     with move
     ppElf "Veuillez pardonner mon insolence mais je souhaiterais demander la main de la princesse Edalla."
-    show callyon_surprise
+    show callyon_surprise at center
+    with move
     hide callyon_normal
+
     show edalla_surprise at right
     hide edalla_normal
     roiSirene "Si cela convient à ma fille, je n’y vois pas d’inconvénient."
@@ -74,12 +76,12 @@ label fin_joyeuse_elf:
     show hiris_happy at left
     hide hiris
 
+    n "La princesse Edalla accepta la demande de la princesse Hiris."
+    n "La vie des deux princesses est remplie de joie et leur amour fît en sorte que le bien des deux cités ne soit jamais remis en cause à nouveau."
     scene credits
     with fade
     stop music fadeout 2.0
     play music "audio/romantique.mp3" fadeout 2.0
-    n "La princesse Edalla accepta la demande de la princesse Hiris."
-    n "La vie des deux princesses est remplie de joie et leur amour fît en sorte que le bien des deux cités ne soit jamais remis en cause à nouveau."
     window hide
     pause 360
     return
@@ -183,13 +185,14 @@ label finMariageArrange_elf:
     roiSirene "Hiris, fille de la Reine de Tyrria et princesse de la cité du même nom, souhaitez-vous prendre pour épouse Hiris, fils du roi d'Océanos et Prince de la cité du même nom ?"
     ppElf "Oui, je le veux."
 
+    n "La princesse de Tyrria accepta la demande de Metilay, prince d'Océanos."
+    n "Leur vie est belle et le restera grâce à la paix se trouvant entre les deux cités."
+    n "La princesse ne le montre pas, mais elle regrette de ne pas avoir déclarée sa flamme à la princesse Edalla lorsqu'elle en avait l'occasion."
+
     scene credits
     with fade
     stop music fadeout 2.0
     play music "audio/drama_1.mp3" fadeout 2.0
-    n "La princesse de Tyrria accepta la demande de Metilay, prince d'Océanos."
-    n "Leur vie est belle et le restera grâce à la paix se trouvant entre les deux cités."
-    n "La princesse ne le montre pas, mais elle regrette de ne pas avoir déclarée sa flamme à la princesse Edalla lorsqu'elle en avait l'occasion."
     window hide
     pause 360
 

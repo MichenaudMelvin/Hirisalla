@@ -33,12 +33,12 @@ label start:
             show hiris:
                 xalign 1.5
             with move
-            stop music fadeout 5.0
+            stop music fadeout 4.0
             jump choix_sirene
         "Hiris l'elf":
             show edalla_normal:
                 xalign -0.5
             with move
-            stop music fadeout 5.0
+            stop music fadeout 4.0
             jump choix_elf
     return

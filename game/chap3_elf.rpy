@@ -1,17 +1,17 @@
-label rencontrePrincesse:
+label rencontrePrincesse_elf:
     #Notify("Chapitre 3")
     scene chambre_sirene
     with fade
 
-    show hiris:
+    show edalla_normal:
         xalign 1.5
     with move
-    show edalla_normal:
+    show hiris:
         xalign -0.5
     with move
-    show hiris at right
+    show hiris at left
     with move
-    show edalla_normal at left
+    show edalla_normal at right
     with move
 
     ppSirene "Bonjour, vous devez être la princesse Hiris qui épousera mon frère."
@@ -24,8 +24,8 @@ label rencontrePrincesse:
     ppSirene "Je comprends votre inquiétude cependant je sais que mon frère est quelqu’un de bien, vous ne serez pas déçue."
     ppSirene "Que diriez-vous d’aller discuter de divers sujets ailleurs ? "
     ppElf "Avec plaisir, où souhaiteriez-vous aller ?"
-    ppSirene "Comme vous préférez, nous pouvons aller nous balader en ville ou rester dans la chambre pour parler plus tranquillement."
     menu:
+        ppSirene "Comme vous préférez, nous pouvons aller nous balader en ville ou rester dans la chambre pour parler plus tranquillement."
         "Aller en ville":
             jump discutionVille_elf
         "Rester dans la chambre":
@@ -34,22 +34,29 @@ label rencontrePrincesse:
 label discutionVille_elf:
     n "Vous décidez d'aller vous balader en ville."
     ppElf "Je ne serais pas contre d'aller me balader à vos côtés en ville !"
+    show edalla_normal:
+        xalign 1.5
+    with move
+    show hiris:
+        xalign -0.5
+    with move
+
     scene ville_sirene
     with fade
     show edalla_normal:
-        xalign -0.5
-    with move
-    show hiris_surprise:
         xalign 1.5
     with move
-    show edalla_normal at left
+    show hiris_surprise:
+        xalign -0.5
     with move
-    show hiris_surprise at right
+    show hiris_surprise at left
+    with move
+    show edalla_normal at right
     with move
     ppSirene "Bienvenue dans la capitale d'Océanos."
     ppElf "C'est ravissant, c’est un endroit bien différent de mon pays."
     hide hiris_surprise
-    show hiris at right
+    show hiris at left
     n "Vous marchez et discutez quelques temps avec la princesse."
     ppSirene "Je change de sujet mais, avez-vous mangé ?"
     ppSirene "Nous pourrions aller manger toutes les deux et continuer notre discussion ?"
@@ -60,9 +67,9 @@ label discutionVille_elf:
     stop music fadeout 2.0
     play music "audio/auberge.mp3" fadeout 2.0
     hide hiris
-    show hiris_surprise at right
+    show hiris_surprise at left
     ppElf "Cette auberge est vraiment magnifique !"
-    show hiris at right
+    show hiris at left
     hide hiris_surprise
     ppSirene "Évidemment, je ne pouvais pas me permettre de vous emmener dans une mauvaise auberge, je vous ai choisis la meilleure de toute !"
     ppElf "Merci, vous êtes adorable."
@@ -71,44 +78,48 @@ label discutionVille_elf:
     ppSirene "Mais cette ville n’a pas toujours été aussi animée, cela n’a changé qu’à partir du couronnement de mon père."
     stop music fadeout 3.0
     ppSirene "À l’époque où mon grand-père gouvernail..."
-    show edalla_gene at left
+    show edalla_gene at right
     hide edalla_normal
     ppElf "..."
     ppSirene "..."
     ppElf "..."
     ppSirene "Pardon..."
     ppSirene "J'ai bu la tasse."
-    show edalla_normal at left
+    show edalla_normal at right
     hide edalla_gene
-    show hiris_happy at right
+    show hiris_happy at left
     hide hiris
     play music "audio/auberge.mp3" fadeout 2.0
-    show hiris at right
+    show hiris at left
     hide hiris_happy
-    show edalla_triste at left
+    show edalla_triste at right
     hide edalla_normal
     ppSirene "À l’époque où mon grand-père gouvernait, les rues étaient vides et inanimées." 
-    show hiris_sad at right
+    show hiris_sad at left
     hide hiris
     ppSirene "Tous les gens, même les enfants étaient enrôlés pour rejoindre l’armée."
     ppElf "Je comprends, nous avons connu une situation similaire dans notre pays..."
     ppSirene "..."
     pause 1
-    show edalla_joie at left
+    show edalla_joie at right
     hide edalla_triste
-    show hiris_happy at right
+    show hiris_happy at left
     hide hiris_sad
     ppSirene "Oh les plats arrivent !"
     pause 3
-    show hiris at right
+    show hiris at left
     hide hiris_happy
-    show edalla_normal at left
+    show edalla_normal at right
     hide edalla_joie
     #son couverts
     n "Vous continuez de déguster votre repas en discutant avec la princesse Edalla."
     pause 3
     ppElf "C'était vraiment délicieux !"
-    ppSirene "Ça me fait plaisir de vous l'entendre dire." 
+    show edalla_joie at right
+    hide edalla_normal
+    ppSirene "Ça me fait plaisir de vous l'entendre dire."
+    show edalla_normal at right
+    hide edalla_joie
     ppSirene "Il me semble que vous aviez à faire, je ne voudrais pas vous retarder plus longtemps."
     menu:
         "Continuer à discuter":
@@ -192,24 +203,23 @@ label vieDePrincesse_elf:
 label dialogueSurPrinces_elf:
     stop music fadeout 2.0
     play music "audio/theme_elfe.mp3" fadeout 2.0
-    ppElf "Merci de m’avoir accordé votre temps et veuillez m’excuser, je me dois de retrouver le prince."
+    ppElf "Merci de m’avoir accordée votre temps et veuillez m’excuser, je me dois de retrouver le prince."
     ppSirene "N'ayez pas d'inquiétude, je vous laisse retourner à vos occupations."
     ppSirene "Merci pour cet après-midi princesse Hiris."
     ppElf "De même pour vous princesse Edalla."
     show edalla_normal:
-        xalign -0.5
+        xalign 1.5
     with move
-    hide edalla_normal
     show hiris:
         xalign -0.5
     with move
-    hide hiris
+    
     scene ville_sirene
     with fade
     show hiris:
-        xalign 1.5
+        xalign -0.5
     with move
-    show hiris at right
+    show hiris at left
     with move
 
     n "Vous marchez vers le château royal et vous tombez sur le prince sur le chemin mais il ne vous voit pas." 
@@ -259,39 +269,49 @@ label mauvais_choix_elf:
     stop music fadeout 1.0
     pause 1
     n "Vous perdez l'équilibre pendant l'observation."
-    show hiris_surprise at right
+    show hiris_surprise at left
     hide hiris
     play sound "audio/chute_personnage.mp3"
     pause 1
     pause 1
     pause 1
     play music "audio/theme_elfe.mp3" fadeout 2.0
-    show hiris_sad at right
+    show hiris_sad at left
     hide hiris_surprise
 
     princeSirene "Princesse Hiris ! Vous allez bien ?"
-    show hiris_happy at right
-    hide hiris_surprise
+    show hiris_happy at left
+    hide hiris_sad
     show metilay_surpris:
-        xalign -0.5
+        xalign 1.5
     with move
-    show metilay_surpris at left
+    show metilay_surpris at right
     with move
     ppElf "Oui, je vous en remercie, j’ai cru apercevoir quelqu’un avec vous, je n’ai pas voulu vous déranger."
     princeSirene "Non ce n’était qu’un ami, mais êtes-vous sûr que tout va bien ?"
-    show hiris at right
+    show hiris at left
     hide hiris_happy
     ppElf "N'ayez crainte, tout va bien."
+    show metilay_normal at right
+    hide metilay_surpris
     princeSirene "Voulez-vous aller vous promener ? Je connais une excellente auberge."
     ppElf "Je suis désolée, je viens tout juste de manger. Allons plutôt nous promener dans un parc si vous le voulez bien."
     ppElf "J’aimerai connaître votre point de vue sur notre union arrangée."
     princeSirene "Je suis très honoré de me marier avec une femme aussi ravissante que vous." 
-    #roug-Hiris
     ppElf "..."
     princeSirene "Oh excusez-moi, je ne voulais pas vous mettre mal à l’aise." 
-    ppElf "Non tout va bien, vous m’avez surpris mais je suis contente que vous soyez aussi gentil et romantique." 
+    ppElf "Non tout va bien, vous m’avez surpris mais je suis contente que vous soyez aussi gentil et romantique."
+    show metilay_heureux at right
+    hide metilay_normal
     princeSirene "Vous m’envoyez ravi." 
     stop music fadeout 2.0
+    show hiris:
+        xalign -0.5
+    with move
+    show metilay_heureux:
+        xalign 1.5
+    with move
+
     scene ambassade_sirene
     with fade
     jump conseil_ambassade_excuse_elf

@@ -30,7 +30,7 @@ label discution_reine_elf:
     stop sound
     scene ambassade_elfe
     with fade
-    show Hiris:
+    show hiris:
         xalign -0.5
     with move
     show hiris at left
@@ -46,7 +46,13 @@ label discution_reine_elf:
     ppElf "Leur village se situe sous l’eau, comment sommes-nous censés respirer ?"
     reineElf "De ce que j’ai appris, nous n’aurons pas à aller sous l’eau, le village est protégé par une bulle d’air"
     ppElf "Je vois, je vous retrouve demain sur la plage pour le départ."
-    jump plage
+    show hiris:
+        xalign -0.5
+    with move
+    show callyon_normal:
+        xalign 1.5
+    with move
+    jump plage_elf
 
 label info_rdv_centaure:
     ppElf "Je ne peux pas accepter un tel destin, je refuse de me marier avec lui."
@@ -60,18 +66,30 @@ label info_rdv_centaure:
 
 label plage_elf:
     scene ville_sirene
-    show hiris at left
     with fade
-    show Hiris at left
+    show hiris:
+        xalign -0.5
+    with move
+    show hiris at left
+    with move
     ppElf "{i} Il semblerait que je sois arrivée au point de rendez-vous. {/i}"
-    show hiris_surprise at left
     hide hiris
+    show hiris_surprise at left
     ppElf "{i} Woaw, voilà à quoi ressemble la cité des Sirènes. {/i}"
+    hide hiris_surprise
+    show hiris at left
     n "Vous vous dirigez vers la cité des Sirènes à l'aide du convoi royal."
+    show hiris:
+        xalign -0.5
+    with move
     play music "audio/theme_sirene.mp3" fadeout 2.0
     scene ambassade_sirene
+    with fade
+    show hiris:
+        xalign -0.5
+    with move
     show hiris at left
-    with fade  
+    with move
     pause 2
     show metilay_normal:
         xalign 1.5
@@ -86,26 +104,22 @@ label plage_elf:
     with move
 
     menu:
-        "Bonjour, je me présente, Hiris.":
-            jump bonjour_hiris_elf
-        "Bonjour messieurs, ravi de faire votre connaissance.":
-            jump bonjour_enchante_elf
-
-label bonjour_hiris_elf:
-    ppElf "Bonjour je me présente, Hiris, la princesse des Elfes en personne."
-    jump presentationFamilleSirene_elf
-
-label bonjour_enchante_elf:
-    ppElf "Bonjour messieurs, ravi de faire votre connaissance."
-    jump presentationFamilleSirene_elf
+        "Bonjour, je me présente, Hiris":
+            ppElf "Bonjour je me présente, Hiris, la princesse des Elfes en personne."
+            jump presentationFamilleSirene_elf
+        "Bonjour messieurs, ravi de faire votre connaissance":
+            ppElf "Bonjour messieurs, ravi de faire votre connaissance."
+            jump presentationFamilleSirene_elf
 
 label presentationFamilleSirene_elf:
     roiSirene "Bonjour, enchanté mademoiselle, je suis Morgon, le roi d'Océanos."
     princeSirene "Echanté de faire votre connaissance, ma gente demoiselle, je suis Metilay, le prince de la même cité."
     menu:
-        "Le prince est aussi ravissant que sur le tableau.":
+        "Le prince est aussi ravissant que sur le tableau":
+            ppElf "{i}Le prince est aussi beau que sur le tableau que mère m'avait montrée.{/i}"
             jump ecouteConversation_elf
-        "Le prince n'est pas aussi attrayant que ce que j'imaginais.":
+        "Le prince n'est pas aussi attrayant que ce que j'imaginais":
+            ppElf "{i}Le prince n'est pas aussi beau que sur le tableau.{/i}"
             jump ecouteConversation_elf
 
 label ecouteConversation_elf:
