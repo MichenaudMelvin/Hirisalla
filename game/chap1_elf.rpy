@@ -1,5 +1,5 @@
 label choix_elf:
-    scene bg elf   
+    scene ville_elfe  
     with fade
     show hiris:
         xalign -0.5
@@ -79,12 +79,12 @@ label suspicion:
 label rencontre_famille_prevu_elf:
     stop music fadeout 2.0
     play music "audio/theme_elfe.mp3" fadeout 2.0
-    scene ambassade
+    scene ambassade_elfe
     with fade  
-    show callyon:
+    show callyon_normal:
         xalign 1.5
     with move
-    show callyon at right
+    show callyon_normal at right
     with move
     show hiris:
         xalign -0.5
@@ -103,6 +103,9 @@ label rencontre_famille_prevu_elf:
 
 label desaccord:
     ppElf "C'est en aucun cas ce dont j'ai envie Mère !"
+    show callyon_colere at right
+    hide callyon_normal
+    hide callyon_normal
     reineElf "Tu n'as pas le choix, c'est la seule solution possible."
     jump tableau_prince
 
@@ -114,15 +117,15 @@ label resignation:
 label rencontre_famille_avance_elf:
     stop music fadeout 2.0
     play music "audio/theme_elfe.mp3" fadeout 2.0
-    scene ambassade 
+    scene ambassade_elfe 
     with fade
     show hiris:
         xalign -0.5
     with move
     show hiris at left
-    show callyon:
+    show callyon_normal:
         xalign 1.5
-    show callyon at right
+    show callyon_normal at right
     with move
     reineElf "Tu es déjà là ma fille ?"
     reineElf "Que me vaut ta visite si précipitée ?"
@@ -147,11 +150,17 @@ label tableau_prince:
         "Complimenter subtilement":
             jump accord
 
-label contradiction:           
+label contradiction:   
+    show hiris_angry at left        
+    hide hiris
     ppElf "Mais je m'en fiche, il a des écailles, des oreilles en forme de nageoire, c'est affreux !"
     ppElf "Je ne pourrais jamais accepter cela."
     jump discution_centaure
 
 label accord_elf:
     ppElf "Si c'est la seule solution, on va dire que cela aurait pu être pire."
+<<<<<<< Updated upstream
     jump discution_reine_elf
+=======
+    jump plage
+>>>>>>> Stashed changes
