@@ -12,6 +12,7 @@ define centaure = Character(_("Garkiel"), color="#eec5a9", what_outlines=[(1, "#
 define tortue = Character ("Amma", color="#7d9062", what_outlines=[(1, "#000000")]) #Tortue
 
 label start:
+    $ edallaConvaicue = False
     $ excuseHiris = False
     $ desaccordHiris = False
     $ dispute = False

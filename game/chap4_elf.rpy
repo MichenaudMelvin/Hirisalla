@@ -2,7 +2,13 @@ label ambassadeExcuses_elf:
     $ excuseHiris = True
     stop music fadeout 2.0
     play music "audio/ambassade.mp3" fadeout 2.0
-    scene chambre_sirene
+
+    window hide
+    scene chapitrequatre
+    with fade
+    pause 2
+
+    scene ambassade_elfe
     with fade
     show hiris:
         xalign -0.5
@@ -42,6 +48,7 @@ label conseil_ambassade_excuse_elf:
         with move
         show hiris at left
         with move
+    window show
     roiSirene "Nous sommes réunis aujourd'hui dans l’objectif de consolider une paix durable."
     reineElf "Tout à fait mon cher ami, nous sommes ici pour souhaiter l’union entre nos enfants respectifs."
     jump choix_mariage_goodEnding_elf
@@ -80,17 +87,21 @@ label fin_joyeuse_elf:
 
     n "La princesse Edalla accepta la demande de la princesse Hiris."
     n "La vie des deux princesses est remplie de joie et leur amour fît en sorte que le bien des deux cités ne soit jamais remis en cause à nouveau."
-    scene credits
-    with fade
     stop music fadeout 2.0
     play music "audio/romantique.mp3" fadeout 2.0
     window hide
+    scene imagedefin
+    with fade
+    pause 2
+    scene credits
+    with fade
     pause 360
     return
 
 label conseil_ambassade_nonExcuse_elf:
     stop music fadeout 2.0
     play music "audio/ambassade.mp3" fadeout 2.0
+    window show
     n "Les deux familles royales se réunissent dans l’ambassade et commence alors une discussion des plus importantes."
     roiSirene "Princesse des Tyrriens, fille de Callyon, j’ai ouï-dire ton désaccord envers cette union qui a pour but, je vous le rappelle, d’unir nos deux familles."
     jump ambassadeNonExcuses_elf
@@ -111,10 +122,14 @@ label finGuerre_elf:
     reineElf "Tu déshonores la famille, tu me déçois."
     n "Le peuple d'Océanos rompue la trêve et démarra les hostilités envers Tyrria le lendemain à l'aube."
     n "La guerre ne s'arrêtera sans doute jamais et sera encore plus meurtrière qu'elle ne l'a jamais été."
-    scene credits
-    with fade
     stop music fadeout 2.0
     play music "audio/drama_2.mp3" fadeout 2.0
+    window hide
+    scene imagedefin
+    with fade
+    pause 2
+    scene credits
+    with fade
     pause 360
     return
 
@@ -136,17 +151,21 @@ label choix_mariage_badEnding_elf:
 label fin_triste_elf:
     ppElf "Je souhaiterais prendre pour épouse votre fille, Edalla."
     roiSirene "Si cela convient à ma fille, je n’y vois pas d’inconvénient."
-    ppSirene "Je ne peux pas accepter cela en si peu de temps... J’accepte toutefois de lui donner mon amitié pour un monde de paix qui grandira dans la tranquillité et la sérénité."
+    ppSirene "Je ne peux pas accepter cela en si peu de temps… J’accepte toutefois de lui donner mon amitié pour un monde de paix qui grandira dans la tranquillité et la sérénité."
     n "Edalla est en visite de courtoisie sur le territoire elfique pour retrouver sa nouvelle amie Hiris."
     n "Afin de lui rendre la pareille, elle lui fait visiter la ville à son tour."
     n "Cependant, un civil, n’ayant pas pu pardonner aux peuple d’Océanos pour les morts qu’ils leurs ont apportés, aperçu la princesse sirène aux côtés de Hiris."
     n "Il bandit alors son arc et tira une flèche en plein cœur d’Edalla et c’est alors qu’elle mourut dans les bras de son amie en pleure."
 
     n "En apprenant la nouvelle, le peuple d'Océanos annula le traité de paix et démarra les hostilités envers Tyrria."
-    scene credits
-    with fade
     stop music fadeout 2.0
     play music "audio/drama_2.mp3" fadeout 2.0
+    window hide
+    scene imagedefin
+    with fade
+    pause 2
+    scene credits
+    with fade
     pause 360
     return
 
@@ -186,11 +205,13 @@ label finMariageArrange_elf:
     n "La princesse de Tyrria accepta la demande de Metilay, prince d'Océanos."
     n "Leur vie est belle et le restera grâce à la paix se trouvant entre les deux cités."
     n "La princesse ne le montre pas, mais elle regrette de ne pas avoir déclarée sa flamme à la princesse Edalla lorsqu'elle en avait l'occasion."
-
-    scene credits
-    with fade
     stop music fadeout 2.0
     play music "audio/drama_1.mp3" fadeout 2.0
+    window hide
+    scene imagedefin
+    with fade
+    pause 2
+    scene credits
+    with fade
     pause 360
-
     return

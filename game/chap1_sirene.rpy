@@ -1,6 +1,13 @@
 label choix_sirene:
+    window hide
+    scene chapitreun
+    with fade
+    pause 2
+
     scene chambre_sirene
     with fade
+    play music "audio/theme_sirene.mp3" fadeout 2.0
+    
     show edalla_normal:
         xalign -0.5
     with move
@@ -9,6 +16,7 @@ label choix_sirene:
     with move
     show edalla_normal at left
     with move
+    window show
     n "La princesse des Océanos, Edalla s'en alla rejoindre son amie qu'elle considairait comme sa pettie sœur, la jeune tortue Amma."
     show amma_normal at right
     with move
@@ -54,12 +62,15 @@ label confiance_sirene:
 
     scene ambassade_sirene
     with fade
-    show Morgon:
+    show edalla_normal:
+        xalign -0.5
+    with move
+    show morgon_normal:
         xalign 1.5
     with move
     show edalla_normal at left
     with move
-    show Morgon at right
+    show morgon_normal at right
     with move
 
     roiSirene "Ma fille, vous voilà !"
@@ -79,13 +90,13 @@ label confiance_sirene:
     ppSirene "Si cela peut offrir une nouvelle paix à notre famille… j'accepte"
     roiSirene "Je m'en excuse mais nous avons dû faire ce choix très rapidement." 
     roiSirene "Mais s'il devient irrespectueux ou il devient un cauchemar pour toi, tu auras le droit de rompre ce mariage." 
-    show Morgon:
+    show morgon_normal:
         xalign 1.5
     with move
     show edalla_normal:
         xalign -0.5
     with move
-    hide Morgon
+    hide morgon_normal
     hide edalla_normal
     jump discution_roi_sirene
 
@@ -111,7 +122,7 @@ label rencontre_famille_prevu_sirene:
 
 label rencontre_famille_avance_sirene:
     tortue "D'accord… mais tu ne te fâches p-pas."
-    tortue "J'ai entendu messire le Roi d-dire que tu… p-pourrais être mariée au p-prince elfe."
+    tortue "J'ai entendu messire le Roi d-dire que tu… p-pourrais être mariée au p-prince elf."
     hide edalla_normal
     show edalla_surprise at left
     ppSirene "Comment ?!"
@@ -121,11 +132,9 @@ label rencontre_famille_avance_sirene:
     show amma_normal:
         xalign 1.5
     with move
-    show edalla_normal:
+    show edalla_surprise:
         xalign -0.5
     with move
-    hide amma_normal
-    hide edalla_normal
 
     scene ambassade_sirene
     with fade
@@ -134,13 +143,15 @@ label rencontre_famille_avance_sirene:
     with move
     show edalla_triste at left
     with move
-    show Morgon:
+    show morgon_surpris:
         xalign 1.5
     with move
-    show Morgon at right
+    show morgon_surpris at right
     with move
     roiSirene "Ma fille ? Vous êtes en avance, pourquoi une arrivée aussi précipitée."
     ppSirene "Attendez, Père, pourquoi une telle décision sans me consulter avant ?"
+    show morgon_normal at right
+    hide morgon_surpris
     roiSirene "Ah, vous sais déjà une des nouvelles que j'allais t'annoncer. Mais qui vous a annoncé cette nouvelle ?"
     show amma_normal:
         xalign -0.5
@@ -160,7 +171,6 @@ label rencontre_famille_avance_sirene:
     roiSirene "Donc, nous n'avons pas pris cette décision à la légère."
     roiSirene "Nous devons arrêter cette guerre avant que tout autre civil meurt, et cela nous apportera d'autres côté positif, et c'est un mal pour un bien." 
     roiSirene "Je sais que vous êtes assez intelligente pour comprendre cette décision."
-    #sirene triste
     ppSirene "Je comprend bien que vous avez des arguments pour justifier ce choix et je ne peux vous dire non."
     ppSirene "La survie de notre peuple en dépend, mais j'aurais voulu être consultée et être prévenue."
     roiSirene "Je m'en excuse mais nous avons dû prendre cette décision très rapidement."
@@ -174,12 +184,20 @@ label rencontre_famille_avance_sirene:
                 xalign -0.5
             with move
             hide edalla_pleure
-            show Morgon:
+            show morgon_normal:
                 xalign 1.5
             with move
             hide roiSirene
             jump discution_tortue_sirene
         "Regarder le tableau":
+            hide edalla_triste
+            show edalla_normal at left
             ppSirene "{i}Ce tableau présente un charmant jeune homme dont les traits laissent dégager une beauté masculine et une virilité accrue.{/i}" 
             ppSirene "{i}Habillé soigneusement et dégageant une aura de personne ferme et sérieuse.{/i}"
+            show edalla_normal:
+                xalign -0.5
+            with move
+            show morgon_normal:
+                xalign 1.5
+            with move
             jump discution_roi_sirene

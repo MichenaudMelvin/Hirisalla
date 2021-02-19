@@ -1,4 +1,9 @@
 label rencontrePrincesse_sirene:
+    window hide
+    scene chapitretrois
+    with fade
+    pause 2
+
     scene chambre_elfe
     with fade
 
@@ -12,23 +17,33 @@ label rencontrePrincesse_sirene:
     with move
     show hiris at right
     with move
-
+    window show
     ppElf "Je me présente Hiris, fille de Callyon, c'est un honneur pour moi de pouvoir vous inviter sous mon toit."
     ppSirene "Enchanté Princesse Hiris, je suis Edalla la fille du roi des Océanos."
     menu:
         "Peut-on en parler ailleurs ?":
+            $ dragueReussi = True
             ppSirene "Je me sens à l'étroit ici, c'est possible de poursuivre dans un endroit moins confiné ?"
+            ppElf "Bien-sur, moi aussi je suis fatigué de rester entre ces murs, allons en ville."
             jump discutionVille_sirene
         "Je suis prête à me marrier":
+            $ dragueReussi = False
             ppSirene "Je suis prête à me marrier avec ton frère."
             jump discutionPolitique_sirene
         "Je pense être prête à faire le bon choix pour mon peuple":
+            $ dragueReussi = False
             ppSirene "Si c'est le seul moyen d'avoir la paix entre nos peuples, alors je me marierai avec ton frère."
             jump vieDePrincesse_sirene
 
 label discutionVille_sirene:
-    $ dragueReussi = True
-    ppElf "Bien-sur, moi aussi je suis fatigué de rester entre ces murs, allons en ville."
+    
+    show edalla_normal:
+        xalign -0.5
+    with move
+    show hiris:
+        xalign 1.5
+    with move
+
     scene ville_elfe
     with fade
     show hiris:
@@ -48,6 +63,8 @@ label discutionVille_sirene:
     show hiris_happy at right
     ppElf "Contente de voir que cela vous plait princesse, vous avez faim ? Je connais une excellente auberge non loin d’ici."
     ppSirene "J'accepte votre proposition avec plaisir princesse Hiris."
+    stop music fadeout 2.0
+    play music "audio/auberge.mp3" fadeout 2.0
     n "Hiris souris et prends la main droite d'Edalla pour se rendre devant un établissement discret aux premiers abords mais une fois à l’intérieur vous ressentez une atmosphère chaleureuse et réconfortante."
     ppSirene "Quel joli endroit, la musique est joyeuse, la présentation magnifique et l’odeur tout simplement exquise."
     ppElf "Bienvenue chez les Trois Centaures, aller venez, j'ai ma table habituelle juste ici."
@@ -61,8 +78,48 @@ label discutionVille_sirene:
     ppSirene "Je vous suis Hiris, où que vous alliez."
     n "Vous partez dans un champ juste toutes les deux, le coucher du soleil se pose doucement dans la vallée laissant les nuages blancs devenir rosâtre." 
     n "Vous regardez Hiris dans les yeux en souriant sans rien dire. Vous regagez l'ambassade le lendemain."
+    show edalla_joie:
+        xalign -0.5
+    with move
+    show hiris_happy:
+        xalign 1.5
+    with move
+
+    window hide
+    scene chapitrequatre
+    with fade
+    pause 2
+
     scene ambassade_elfe
     with fade
+    stop music fadeout 2.0
+    play music "audio/ambassade.mp3" fadeout 2.0
+    show edalla_normal:
+        xalign -0.5
+    with move
+    show edalla_normal at left
+    with move
+    show morgon_normal:
+        xalign -0.5
+    with move
+    show morgon_normal:
+        xalign 0.15
+    with move
+    hide edalla_normal
+    show edalla_normal at left
+    show callyon_normal:
+        xalign 1.5
+    with move
+    show callyon_normal at right
+    with move
+    show keidal_normal:
+        xalign 1.5
+    with move
+    show keidal_normal:
+        xalign 0.85
+    with move
+    hide callyon_normal
+    show callyon_normal at right
     jump discution_sirene  
 
 label discutionPolitique_sirene:
@@ -77,12 +134,20 @@ label discutionPolitique_sirene:
     hide edalla_gene
     show edalla_normal at left
     ppSirene "Les coraux sont rouges depuis des siècles, ces conflits méritent d'être finis une bonne fois pour toute."
-    ppElf "Ce n’est pas à vous de payez les conséquences du passées."
-    ppSirene "Non, mais j’assume les choix de mes ancêtres et je pense que vous devrez en faire de même Princesse."
-    #play sound "audio/claque.mp3"
+    menu:
+        ppElf "Ce n’est pas à vous de payez les conséquences du passées."
+        "Changer de sujet":
+            ppSirene "Vous avez probablement raison, changeons de sujet."
+            ppElf "Oui, allons en ville."
+            jump discutionVille_sirene
+        "Garder mon opinion":
+            ppSirene "Non, mais j’assume les choix de mes ancêtres et je pense que vous devrez en faire de même Princesse."
+            jump discutionPolitiqueDispute_sirene
+    
+label discutionPolitiqueDispute_sirene:
     hide hiris
     show hiris_angry at right
-    ppElf "A qui croyez vous parler ? Sirène je suis la fille de la reine, un peu de respect !"
+    ppElf "A qui croyez vous parler sirène ? Je suis la fille de la reine, un peu de respect !"
     ppElf "Callyon, mon honneur et ma famille sont aussi importants que mon peuple." 
     ppElf "Nous subissons également des lourdes pertes, la nature ne pousse même plus sur certaines zones de batailles."
     hide edalla_normal
@@ -97,6 +162,12 @@ label discutionPolitique_sirene:
     show hiris_angry:
         xalign 1.5
     with move
+
+    window hide
+    scene chapitrequatre
+    with fade
+    pause 2
+
     scene ambassade_elfe
     with fade
     jump excusesPrincesse_sirene
@@ -135,7 +206,7 @@ label vieDePrincesse_sirene:
     pause 1
     hide edalla_surprise
     show edalla_joie at left
-    ppSirene "Bien, je pense que nous devons retourer à l'ambassade."
+    ppSirene "Bien, je pense que nous devons retourner à l'ambassade."
     show edalla_joie:
         xalign -0.5
     with move
@@ -143,18 +214,41 @@ label vieDePrincesse_sirene:
         xalign 1.5
     with move
 
+    window hide
+    scene chapitrequatre
+    with fade
+    pause 2
+
     scene ambassade_elfe
     with fade
+    stop music fadeout 2.0
+    play music "audio/ambassade.mp3" fadeout 2.0
     show edalla_normal:
-        xalign 1.5
-    with move
-    show hiris:
         xalign -0.5
     with move
-    show edalla_normal at right
+    show edalla_normal at left
     with move
-    show hiris at left
+    show morgon_normal:
+        xalign -0.5
     with move
+    show morgon_normal:
+        xalign 0.15
+    with move
+    hide edalla_normal
+    show edalla_normal at left
+    show callyon_normal:
+        xalign 1.5
+    with move
+    show callyon_normal at right
+    with move
+    show keidal_normal:
+        xalign 1.5
+    with move
+    show keidal_normal:
+        xalign 0.85
+    with move
+    hide callyon_normal
+    show callyon_normal at right
     jump discution_sirene
 
 label excusesPrincesse_sirene:
@@ -168,6 +262,7 @@ label excusesPrincesse_sirene:
     with move
     show edalla_pleure at left
     with move
+    window show
     reineElf "Edalla, allez-vous vous excusez pour vos propos."
     ppSirene "Oui… Désolée… "
     ppSirene "Je regrette vraiment ce que j'ai pu dire à Hiris."
@@ -188,4 +283,6 @@ label excusesPrincesse_sirene:
     with move
     hide callyon_colere
     show callyon_normal at right
+    stop music fadeout 2.0
+    play music "audio/ambassade.mp3" fadeout 2.0
     jump discution_sirene

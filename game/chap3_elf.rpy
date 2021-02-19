@@ -1,5 +1,4 @@
 label rencontrePrincesse_elf:
-    #Notify("Chapitre 3")
     scene chambre_sirene
     with fade
 
@@ -13,7 +12,7 @@ label rencontrePrincesse_elf:
     with move
     show edalla_normal at right
     with move
-
+    window show
     ppSirene "Bonjour, vous devez être la princesse Hiris qui épousera mon frère."
     ppSirene "Je me présente, je suis la princesse Edalla, la fille du roi Morgon."
     ppSirene "J'aimerai parler avec toi de ce mariage."
@@ -77,13 +76,13 @@ label discutionVille_elf:
     ppSirene "J’y viens depuis petite avec mon frère, cette auberge a toujours existée, aussi loin que je m’en souvienne."
     ppSirene "Mais cette ville n’a pas toujours été aussi animée, cela n’a changé qu’à partir du couronnement de mon père."
     stop music fadeout 3.0
-    ppSirene "À l’époque où mon grand-père gouvernail..."
+    ppSirene "À l’époque où mon grand-père gouvernail…"
     show edalla_gene at right
     hide edalla_normal
-    ppElf "..."
-    ppSirene "..."
-    ppElf "..."
-    ppSirene "Pardon..."
+    ppElf "…"
+    ppSirene "…"
+    ppElf "…"
+    ppSirene "Pardon…"
     ppSirene "J'ai bu la tasse."
     show edalla_normal at right
     hide edalla_gene
@@ -98,8 +97,8 @@ label discutionVille_elf:
     show hiris_sad at left
     hide hiris
     ppSirene "Tous les gens, même les enfants étaient enrôlés pour rejoindre l’armée."
-    ppElf "Je comprends, nous avons connu une situation similaire dans notre pays..."
-    ppSirene "..."
+    ppElf "Je comprends, nous avons connu une situation similaire dans notre pays…"
+    ppSirene "…"
     pause 1
     show edalla_joie at right
     hide edalla_triste
@@ -131,7 +130,7 @@ label discutionChambre_elf:
     ppElf "Je ne serais pas contre de rester me reposer un peu en discutant avec vous !"
     ppSirene "Sans problème, je vous en prie, installez-vous."
     ppElf "Je vous en remercie."
-    ppSirene "Je m'excuse de cette question si soudaine mais..."
+    ppSirene "Je m'excuse de cette question si soudaine mais…"
     ppSirene "Que pensez-vous de mon frère ?"
     ppElf "Pour le peu que je connaisse le prince, je reste mitigée, j'ai quelques difficultés à me projeter sur un potentiel marriage."
     ppSirene "Je comprend votre inquiétude mais c'est nécessaire pour maintenir la paix pour les générations futures de nos peuples respectifs."
@@ -139,8 +138,8 @@ label discutionChambre_elf:
     ppElf "Pourquoi serait-ce à moi d'endosser ce fardeau que nos ancêtres nous ont légués ?"
     ppSirene "Ce n'est pas une décision qu'une personne peut négliger, ce mariage à un engagement politique conséquent."
     ppSirene "Dites-vous que c'est le prix à payer pour ce que votre peuple nous à fait subir à l'époque."
-    ppElf "..."
-    ppSirene "..."
+    ppElf "…"
+    ppSirene "…"
     menu:
         "Demander à aller en ville":
             ppElf "Est-ce que vous seriez intéressée pour sortir en ville et discuter toutes les deux ?"
@@ -203,6 +202,12 @@ label vieDePrincesse_elf:
         xalign -0.5
     with move
     hide hiris
+
+    window hide
+    scene chapitrequatre
+    with fade
+    pause 2
+
     scene ambassade_sirene
     with fade
     jump conseil_ambassade_excuse_elf
@@ -245,32 +250,42 @@ label bon_choix_elf:
     n "Vous patientez quelques secondes et décider de ne plus vous cacher."      
     pause 1
     show metilay_normal:
-        xalign -0.5
+        xalign 1.5
     with move
     show metilay_normal:
-        xalign 0.15
+        xalign 0.85
     with move
     show keidal_normal:
-        xalign -0.5
+        xalign 1.5
     with move
-    show keidal_normal at left
+    show keidal_normal at right
     with move
-    show hiris_surprise at right
+    show hiris_surprise at left
     hide hiris
     ppElf "KEIDAL ?! Que fais-tu ici ?"
     princeElf "Je suis en train de discuter avec un ami, rien de plus."
     ppElf "Vous êtes vachement proche quand même."
     show metilay_normal:
-        xalign 0.35
+        xalign 0.65
     with move
     princeElf "Non, pas spécialement. Viens, retournons à l'ambassade, une longue journée nous attend."
     show hiris_surprise:
-        xalign 1.5
+        xalign -0.5
     with move
     show keidal_normal:
         xalign 1.5
     with move
-    jump ambassadeExcuses_elf
+    show metilay_normal:
+        xalign 1.5
+    with move
+    window hide
+    scene chapitrequatre
+    with fade
+    pause 2
+    
+    scene ambassade_sirene
+    with fade
+    jump conseil_ambassade_excuse_elf
     
 label mauvais_choix_elf:
     stop music fadeout 1.0
@@ -305,7 +320,7 @@ label mauvais_choix_elf:
     ppElf "Je suis désolée, je viens tout juste de manger. Allons plutôt nous promener dans un parc si vous le voulez bien."
     ppElf "J’aimerai connaître votre point de vue sur notre union arrangée."
     princeSirene "Je suis très honoré de me marier avec une femme aussi ravissante que vous." 
-    ppElf "..."
+    ppElf "…"
     princeSirene "Oh excusez-moi, je ne voulais pas vous mettre mal à l’aise." 
     ppElf "Non tout va bien, vous m’avez surpris mais je suis contente que vous soyez aussi gentil et romantique."
     show metilay_heureux at right
@@ -319,6 +334,11 @@ label mauvais_choix_elf:
         xalign 1.5
     with move
 
+    window hide
+    scene chapitrequatre
+    with fade
+    pause 2
+
     scene ambassade_sirene
     with fade
     jump conseil_ambassade_excuse_elf
@@ -329,7 +349,7 @@ label excusesPrincesse_elf:
     scene ville_elfe
     with fade
 
-    n "Le lendemain..."
+    n "Le lendemain…"
     show centaure:
         xalign -0.5
     with move
@@ -367,6 +387,11 @@ label excusesPrincesse_elf:
         "Présenter ses excuses":
             jump ambassadeExcuses_elf
         "Ignorer":
+            window hide
+            scene chapitrequatre
+            with fade
+            pause 2
+
             scene ambassade_sirene
             with fade
 

@@ -1,4 +1,9 @@
 label choix_elf:
+    window hide
+    scene chapitreun
+    with fade
+    pause 2
+    
     scene ville_elfe  
     with fade
     show hiris:
@@ -56,7 +61,7 @@ label confiance_elf:
 
 label colere_elf:
     ppElf "Dis-moi, tu sais très bien que je déteste qu'on ne me dise pas clairement les choses."
-    centaure "Je ne devais rien te dire, tu es toujours aussi têtue..."
+    centaure "Je ne devais rien te dire, tu es toujours aussi têtue…"
     centaure "La reine a décidé de te marier avec le prince d'Océanos."
     hide hiris
     show hiris_angry at left
@@ -192,4 +197,10 @@ label accord_elf:
     show callyon_normal:
         xalign 1.5
     with move
+
+    window hide
+    scene chapitredeux
+    with fade
+    pause 2
+
     jump discution_reine_elf

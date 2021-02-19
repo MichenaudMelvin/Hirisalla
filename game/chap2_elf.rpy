@@ -1,4 +1,9 @@
 label discution_centaure_elf:
+    window hide
+    scene chapitredeux
+    with fade
+    pause 2
+
     scene ville_elfe
     with fade
     show hiris_angry:
@@ -11,6 +16,7 @@ label discution_centaure_elf:
     with move
     show centaure at right
     with move
+    window show
     centaure "Je ne suis pas non plus d'accord que ce soit toi qui ai le devoir de te sacrifier pour les autres."
     centaure "Mais nous n'avons pas le choix, tu peux tous nous sauver."
     menu:    
@@ -46,6 +52,7 @@ label discution_reine_elf:
     with move
     show callyon_normal at right
     with move
+    window show
     ppElf "J'y ai réfléchis ma Reine."
     reineElf "Je vous écoute."
     ppElf "J'accomplirai mon devoir afin d’apporter la paix, la sécurité et la prospérité à notre peuple."
@@ -131,15 +138,19 @@ label presentationFamilleSirene_elf:
     roiSirene "Bonjour, enchanté mademoiselle, je suis Morgon, le roi d'Océanos."
     princeSirene "Echanté de faire votre connaissance, ma gente demoiselle, je suis Metilay, le prince de la même cité."
     menu:
-        "Le prince est aussi ravissant que sur le tableau":
+        "{i}Le prince est aussi ravissant que sur le tableau{/i}":
             ppElf "{i}Le prince est aussi beau que sur le tableau que mère m'avait montrée.{/i}"
             jump ecouteConversation_elf
-        "Le prince n'est pas aussi attrayant que ce que j'imaginais":
+        "{i}Le prince n'est pas aussi attrayant que ce que j'imaginais{/i}":
             ppElf "{i}Le prince n'est pas aussi beau que sur le tableau.{/i}"
             jump ecouteConversation_elf
 
 label ecouteConversation_elf:
     roiSirene "Comme mon messager vous l’a transmis, je suis d’avis que cette guerre a déjà bien assez durée."
     roiSirene "C'est alors que j'ai pensé que le moyen d'y mettre un terme définitivement était un mariage arrangé qui unirait nos clans pour l’éternité."
-    princeSirene "Par ailleurs, la princesse de cette Cité aurait aimé vous rencontrer en privé." 
+    princeSirene "Par ailleurs, la princesse de cette Cité aurait aimé vous rencontrer en privé."
+    window hide
+    scene chapitretrois
+    with fade
+    pause 2
     jump rencontrePrincesse_elf
