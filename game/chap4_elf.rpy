@@ -57,7 +57,7 @@ label choix_mariage_goodEnding_elf:
     menu:
         "Déclarer sa flamme à Edalla":
             jump fin_joyeuse_elf
-        "Accepter le mariage avec le Metilay":
+        "Accepter le mariage avec Metilay":
             jump finMariageArrange_elf
 
 label fin_joyeuse_elf:
@@ -196,7 +196,7 @@ label finMariageArrange_elf:
     show metilay_heureux at right
     with move
     ppElf "J'accepte avec plaisir ce que nous avions prévu."
-    roiSirene "J'entend bien."
+    roiSirene "J'entends bien."
     roiSirene "Metilay, fils du roi d'Océanos et Prince de la cité du même nom, souhaitez-vous prendre pour épouse Hiris, fille de la Reine de Tyrria et princesse de la cité du même nom ?"
     princeSirene "Oui, je le veux."
     roiSirene "Hiris, fille de la Reine de Tyrria et princesse de la cité du même nom, souhaitez-vous prendre pour épouse Hiris, fils du roi d'Océanos et Prince de la cité du même nom ?"
@@ -204,7 +204,7 @@ label finMariageArrange_elf:
 
     n "La princesse de Tyrria accepta la demande de Metilay, prince d'Océanos."
     n "Leur vie est belle et le restera grâce à la paix se trouvant entre les deux cités."
-    n "La princesse ne le montre pas, mais elle regrette de ne pas avoir déclarée sa flamme à la princesse Edalla lorsqu'elle en avait l'occasion."
+    n "La princesse ne le montre pas, mais elle regrette de ne pas avoir déclaré sa flamme à la princesse Edalla lorsqu'elle en avait l'occasion."
     stop music fadeout 2.0
     play music "audio/drama_1.mp3" fadeout 2.0
     window hide
