@@ -213,6 +213,7 @@ label vieDePrincesse_elf:
     jump conseil_ambassade_excuse_elf
 
 label dialogueSurPrinces_elf:
+    #pas la bonne musique
     stop music fadeout 2.0
     play music "audio/theme_elfe.mp3" fadeout 2.0
     ppElf "Merci de m’avoir accordée votre temps et veuillez m’excuser, je me dois de retrouver le prince."
@@ -325,7 +326,7 @@ label mauvais_choix_elf:
     ppElf "Non tout va bien, vous m’avez surpris mais je suis contente que vous soyez aussi gentil et romantique."
     show metilay_heureux at right
     hide metilay_normal
-    princeSirene "Vous m’envoyez ravi." 
+    princeSirene "Vous m’en voyez ravi." 
     stop music fadeout 2.0
     show hiris:
         xalign -0.5

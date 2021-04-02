@@ -83,7 +83,7 @@ label info_rdv_roi_sirene:
     with move
     menu:
         tortue "Edalla tu voudrais parler de ton mariage plus en détail ?"
-        "Parler du marriage":
+        "Parler du mariage":
             ppSirene "Amma, puis-je te parler sérieusement ?"
             jump reflexion_sirene
         "Preferez se reposer":
@@ -216,7 +216,7 @@ label ecouteConversation_sirene:
         hide edalla_triste
         show edalla_triste at left
     roiSirene "Bien, pour que la paix soit durable il nous faut un mariage."
-    reineElf "Mademoiselle Edalla, je vous prie de rejoindre ma fille, Hiris, pour parler de vôtre marriage à toutes les deux."
+    reineElf "Mademoiselle Edalla, je vous prie de rejoindre ma fille, Hiris, pour parler de vôtre mariage à toutes les deux."
     reineElf "Elle doit être dans sa chambre."
     ppSirene "Bien… j'y vais de ce pas."
     if (edallaConvaicue == True):
